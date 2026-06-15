@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lidiane &amp; Celio — Convite de Casamento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a96e;
+      --gold-light: #e8d5b0;
+      --navy: #1a2a4a;
+      --white: #fdf8f4;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: #0a0a0a;
+      color: var(--white);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('convite-fundo.jpg') center top / cover no-repeat;
+      z-index: 0;
+    }
+
+    /* gradient that fades the photo into dark at bottom */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,10,10,0.05) 0%,
+        rgba(10,10,10,0.15) 45%,
+        rgba(10,10,10,0.75) 72%,
+        rgba(10,10,10,1)   100%
+      );
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem 1.5rem 3.5rem;
+      width: 100%;
+    }
+
+    .script-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3.2rem, 12vw, 6.5rem);
+      color: var(--white);
+      line-height: 1.1;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+      letter-spacing: 0.02em;
+    }
+
+    .amp {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 4vw, 1.8rem);
+      color: var(--gold);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin: -0.3rem 0;
+    }
+
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin: 1.4rem auto 0;
+      width: 260px;
+    }
+
+    .hero-divider .line {
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .hero-divider .diamond {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+    }
+
+    /* ── SCROLL DOWN CUE ── */
+    .scroll-cue {
+      position: absolute;
+      bottom: 1.4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0.7;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    .scroll-cue span {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .scroll-cue svg { color: var(--gold); }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ── CONTENT SECTION ── */
+    .content {
+      background: #0a0a0a;
+      padding: 4rem 1.5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3.5rem;
+    }
+
+    /* petals decoration */
+    .petals {
+      font-size: 1.4rem;
+      opacity: 0.5;
+      letter-spacing: 0.5rem;
+    }
+
+    /* ── MESSAGE CARD ── */
+    .message-card {
+      max-width: 600px;
+      width: 100%;
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 4px;
+      padding: 2.8rem 2.2rem;
+      position: relative;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(4px);
+      text-align: center;
+    }
+
+    .message-card::before,
+    .message-card::after {
+      content: '✦';
+      position: absolute;
+      color: var(--gold);
+      font-size: 0.9rem;
+      opacity: 0.5;
+    }
+
+    .message-card::before { top: 0.75rem; left: 0.75rem; }
+    .message-card::after  { bottom: 0.75rem; right: 0.75rem; }
+
+    .message-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+    }
+
+    .message-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.15rem, 3.5vw, 1.4rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(253,248,244,0.88);
+    }
+
+    .message-sign {
+      margin-top: 1.8rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: var(--gold);
+    }
+
+    /* ── DETAILS BLOCK ── */
+    .details {
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .details-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 1.5rem;
+    }
+
+    @media (max-width: 420px) {
+      .details-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+    }
+
+    .detail-item { display: flex; flex-direction: column; gap: 0.4rem; align-items: center; }
+
+    .detail-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .detail-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.8;
+    }
+
+    .detail-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.5;
+    }
+
+    /* ── MUSIC BUTTON ── */
+    .music-section {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .music-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.8;
+    }
+
+    .music-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      padding: 0.9rem 2rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+    }
+
+    .music-btn:hover {
+      background: rgba(201,169,110,0.12);
+      color: var(--white);
+      transform: scale(1.03);
+    }
+
+    .music-btn .play-icon {
+      width: 34px; height: 34px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .music-btn .play-icon svg { width: 12px; height: 12px; fill: var(--gold); }
+
+    /* pulsing ring when music plays */
+    .music-btn.playing .play-icon {
+      box-shadow: 0 0 0 4px rgba(201,169,110,0.2);
+      animation: pulse-ring 1.5s ease-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0   rgba(201,169,110,0.35); }
+      70%  { box-shadow: 0 0 0 10px rgba(201,169,110,0);   }
+      100% { box-shadow: 0 0 0 0   rgba(201,169,110,0);    }
+    }
+
+    /* hidden YouTube embed */
+    #yt-container {
+      width: 1px; height: 1px; overflow: hidden;
+      position: fixed; bottom: 0; right: 0; z-index: -1;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0a0a0a;
+      text-align: center;
+      padding: 2.5rem 1rem 3rem;
+      border-top: 1px solid rgba(201,169,110,0.12);
+    }
+
+    .footer-names {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(253,248,244,0.4);
+    }
+
+    /* ── ENTRANCE ANIMATION ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-text">
+      <p class="script-name">Lidiane</p>
+      <span class="amp">&amp;</span>
+      <p class="script-name">Celio</p>
+      <div class="hero-divider">
+        <span class="line"></span>
+        <span class="diamond"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+
+    <div class="scroll-cue">
+      <span>rolar</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══ CONTENT ═══ -->
+  <main class="content">
+
+    <div class="petals fade-in">🌸 🌸 🌸</div>
+
+    <!-- Message to guest -->
+    <div class="message-card fade-in">
+      <p class="message-label">Mensagem ao convidado</p>
+      <p class="message-text">
+        Com o coração transbordando de alegria,<br/>
+        temos a honra de convidá-lo(a) para celebrar<br/>
+        o momento mais especial de nossas vidas.<br/><br/>
+        Naquele dia, dois caminhos se tornarão um só —<br/>
+        e queremos que você faça parte<br/>
+        desta história de amor, fé e cumplicidade.<br/><br/>
+        Sua presença será o maior presente<br/>
+        que poderíamos receber.
+      </p>
+      <p class="message-sign">Com amor, Lidiane &amp; Celio</p>
+    </div>
+
+    <!-- Details -->
+    <div class="details fade-in">
+      <p class="details-title">Detalhes da cerimônia</p>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="detail-icon">📅</span>
+          <span class="detail-label">Data</span>
+          <span class="detail-value">16 de Julho</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">🕓</span>
+          <span class="detail-label">Horário</span>
+          <span class="detail-value">15h50</span>
+        </div>
+        <div class="detail-item" style="grid-column: 1 / -1;">
+          <span class="detail-icon">📍</span>
+          <span class="detail-label">Local</span>
+          <span class="detail-value">
+            Cartório do Roça Grande<br/>
+            Rodovia da Uva, 1041
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Music -->
+    <div class="music-section fade-in">
+      <p class="music-label">Nossa música especial</p>
+      <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+        <span class="play-icon">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        </span>
+        <span id="musicLabel">Toque a trilha do nosso amor</span>
+      </button>
+    </div>
+
+    <div class="petals fade-in">🌸 🌸 🌸</div>
+  </main>
+
+  <!-- Hidden YouTube player -->
+  <div id="yt-container">
+    <div id="yt-player"></div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <p class="footer-names">Lidiane &amp; Celio</p>
+    <p class="footer-date">16 · 07 · 2025 &nbsp;·&nbsp; 15h50</p>
+  </footer>
+
+  <!-- YouTube IFrame API -->
+  <script>
+    // ── YouTube Player ──
+    var player;
+    var musicPlaying = false;
+
+    window.onYouTubeIframeAPIReady = function () {
+      player = new YT.Player('yt-player', {
+        height: '1',
+        width: '1',
+        videoId: 'AphGLJFwxo0',
+        playerVars: {
+          autoplay: 0,
+          start: 0,
+          controls: 0,
+          playsinline: 1
+        },
+        events: {
+          onStateChange: function (e) {
+            if (e.data === YT.PlayerState.ENDED) {
+              setMusicOff();
+            }
+          }
+        }
+      });
+    };
+
+    function toggleMusic() {
+      if (!player) return;
+      if (musicPlaying) {
+        player.pauseVideo();
+        setMusicOff();
+      } else {
+        player.playVideo();
+        setMusicOn();
+      }
+    }
+
+    function setMusicOn() {
+      musicPlaying = true;
+      document.getElementById('musicBtn').classList.add('playing');
+      document.getElementById('musicLabel').textContent = 'Pausar música';
+    }
+
+    function setMusicOff() {
+      musicPlaying = false;
+      document.getElementById('musicBtn').classList.remove('playing');
+      document.getElementById('musicLabel').textContent = 'Toque a trilha do nosso amor';
+    }
+
+    // Load the API
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+
+    // ── Scroll-triggered fade-in ──
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(function (el) {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

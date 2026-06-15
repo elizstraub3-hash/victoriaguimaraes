@@ -342,6 +342,170 @@
       color: rgba(253,248,244,0.4);
     }
 
+    /* ── RSVP SECTION ── */
+    .rsvp-section {
+      max-width: 580px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .rsvp-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.4rem;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .rsvp-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(253,248,244,0.5);
+      margin-bottom: 2rem;
+    }
+
+    .rsvp-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      text-align: left;
+    }
+
+    .rsvp-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 460px) { .rsvp-row { grid-template-columns: 1fr; } }
+
+    .rsvp-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .rsvp-field label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .rsvp-field input,
+    .rsvp-field select,
+    .rsvp-field textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,169,110,0.3);
+      border-radius: 2px;
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.25s;
+      width: 100%;
+    }
+
+    .rsvp-field input::placeholder,
+    .rsvp-field textarea::placeholder { color: rgba(253,248,244,0.3); }
+
+    .rsvp-field input:focus,
+    .rsvp-field select:focus,
+    .rsvp-field textarea:focus { border-color: var(--gold); }
+
+    .rsvp-field select option { background: #1a1a1a; color: var(--white); }
+
+    .rsvp-field textarea { resize: vertical; min-height: 80px; }
+
+    .attend-toggle {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .attend-opt {
+      flex: 1;
+      position: relative;
+    }
+
+    .attend-opt input[type="radio"] {
+      position: absolute; opacity: 0; width: 0; height: 0;
+    }
+
+    .attend-opt label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(201,169,110,0.3);
+      border-radius: 2px;
+      padding: 0.75rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: rgba(253,248,244,0.6);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .attend-opt input:checked + label {
+      border-color: var(--gold);
+      color: var(--white);
+      background: rgba(201,169,110,0.1);
+    }
+
+    .rsvp-submit {
+      background: var(--gold);
+      color: #0a0a0a;
+      border: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: opacity 0.25s, transform 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .rsvp-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+    .rsvp-submit:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+    .rsvp-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 2.5rem 1.5rem;
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 4px;
+      background: rgba(201,169,110,0.05);
+    }
+
+    .rsvp-success .check-icon {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    .rsvp-success h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: var(--gold);
+    }
+
+    .rsvp-success p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: rgba(253,248,244,0.75);
+      line-height: 1.7;
+    }
+
     /* ── ENTRANCE ANIMATION ── */
     .fade-in {
       opacity: 0;
@@ -437,6 +601,65 @@
     </div>
 
     <div class="petals fade-in">🌸 🌸 🌸</div>
+
+    <!-- RSVP -->
+    <div class="rsvp-section fade-in" id="rsvpSection">
+      <h2 class="rsvp-title">Confirme sua Presença</h2>
+      <p class="rsvp-subtitle">Aguardamos sua confirmação até 10 de julho</p>
+
+      <form class="rsvp-form" id="rsvpForm" onsubmit="submitRsvp(event)">
+        <div class="rsvp-field">
+          <label for="rsvpName">Seu nome completo *</label>
+          <input type="text" id="rsvpName" placeholder="Como gostaria de ser chamado(a)" required />
+        </div>
+
+        <div class="rsvp-row">
+          <div class="rsvp-field">
+            <label for="rsvpPhone">WhatsApp</label>
+            <input type="tel" id="rsvpPhone" placeholder="(00) 00000-0000" />
+          </div>
+          <div class="rsvp-field">
+            <label for="rsvpGuests">Nº de pessoas *</label>
+            <select id="rsvpGuests" required>
+              <option value="">Selecione</option>
+              <option value="1">Só eu (1)</option>
+              <option value="2">Eu + 1 (2)</option>
+              <option value="3">Eu + 2 (3)</option>
+              <option value="4">Eu + 3 (4)</option>
+              <option value="5+">5 ou mais</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="rsvp-field">
+          <label>Você vai comparecer? *</label>
+          <div class="attend-toggle">
+            <div class="attend-opt">
+              <input type="radio" name="attending" id="attendYes" value="sim" required />
+              <label for="attendYes">✓ &nbsp;Sim, estarei lá!</label>
+            </div>
+            <div class="attend-opt">
+              <input type="radio" name="attending" id="attendNo" value="nao" />
+              <label for="attendNo">✗ &nbsp;Não poderei ir</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="rsvp-field">
+          <label for="rsvpMsg">Mensagem para os noivos (opcional)</label>
+          <textarea id="rsvpMsg" placeholder="Deixe um carinho para Lidiane &amp; Celio..."></textarea>
+        </div>
+
+        <button type="submit" class="rsvp-submit" id="rsvpSubmit">Confirmar presença</button>
+      </form>
+
+      <div class="rsvp-success" id="rsvpSuccess">
+        <div class="check-icon">✓</div>
+        <h3>Confirmado!</h3>
+        <p id="rsvpSuccessMsg">Que alegria! Estamos ansiosos para celebrar com você.</p>
+      </div>
+    </div>
+
   </main>
 
   <!-- Hidden YouTube player -->
@@ -517,6 +740,50 @@
     document.querySelectorAll('.fade-in').forEach(function (el) {
       observer.observe(el);
     });
+
+    // ── RSVP ──
+    // To sync across devices, paste your Google Apps Script URL here:
+    var SCRIPT_URL = null; // e.g. 'https://script.google.com/macros/s/YOUR_ID/exec'
+
+    function submitRsvp(e) {
+      e.preventDefault();
+      var btn = document.getElementById('rsvpSubmit');
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      var rsvp = {
+        id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+        nome: document.getElementById('rsvpName').value.trim(),
+        whatsapp: document.getElementById('rsvpPhone').value.trim(),
+        pessoas: document.getElementById('rsvpGuests').value,
+        confirmado: document.querySelector('input[name="attending"]:checked').value,
+        mensagem: document.getElementById('rsvpMsg').value.trim(),
+        data: new Date().toLocaleString('pt-BR')
+      };
+
+      // Always save locally as backup
+      var stored = JSON.parse(localStorage.getItem('wedding_rsvps') || '[]');
+      stored.push(rsvp);
+      localStorage.setItem('wedding_rsvps', JSON.stringify(stored));
+
+      if (SCRIPT_URL) {
+        fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(rsvp)
+        }).catch(function(){});
+      }
+
+      // Show success
+      document.getElementById('rsvpForm').style.display = 'none';
+      var successEl = document.getElementById('rsvpSuccess');
+      successEl.style.display = 'flex';
+      var msg = rsvp.confirmado === 'sim'
+        ? 'Que alegria! Estamos ansiosos para celebrar este momento especial com você. Até lá! 💛'
+        : 'Sentiremos muito a sua falta. Mas ficamos felizes pelo carinho de nos avisar. Com amor, Lidiane & Celio.';
+      document.getElementById('rsvpSuccessMsg').textContent = msg;
+    }
   </script>
 </body>
 </html>

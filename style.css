@@ -181,20 +181,11 @@ ul { list-style: none; }
   justify-content: space-between;
 }
 
-.logo { display: flex; flex-direction: column; line-height: 1.2; }
-.logo-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.35rem;
-  color: var(--gold);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-.logo-sub {
-  font-size: 9px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  opacity: 0.65;
+.logo { display: flex; align-items: center; line-height: 1; }
+.logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {

@@ -255,10 +255,10 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    120deg,
-    rgba(13,13,13,0.90) 0%,
-    rgba(13,13,13,0.58) 55%,
-    rgba(13,13,13,0.28) 100%
+    to bottom,
+    rgba(13,13,13,0.82) 0%,
+    rgba(13,13,13,0.70) 40%,
+    rgba(13,13,13,0.85) 100%
   );
   z-index: 1;
 }
@@ -489,6 +489,42 @@ ul { list-style: none; }
 }
 .course-features li:last-child { border-bottom: none; }
 .course-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Course product price display */
+.course-price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 24px 0 28px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(201,169,110,0.18);
+  border-bottom: 1px solid rgba(201,169,110,0.18);
+}
+.course-price-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.course-price-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.course-card.premium .course-price-value { color: var(--gold-light); }
+.course-price-currency {
+  font-size: 1.1rem;
+  font-weight: 400;
+  vertical-align: super;
+  margin-right: 2px;
+}
+.course-price-cents {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
 
 /* ========================
    GIFT BANNER
@@ -1109,9 +1145,9 @@ ul { list-style: none; }
   .hero-overlay {
     background: linear-gradient(
       to top,
-      rgba(13,13,13,0.96) 0%,
-      rgba(13,13,13,0.55) 42%,
-      rgba(13,13,13,0.10) 100%
+      rgba(13,13,13,0.97) 0%,
+      rgba(13,13,13,0.80) 50%,
+      rgba(13,13,13,0.65) 100%
     );
   }
   .hero-content {

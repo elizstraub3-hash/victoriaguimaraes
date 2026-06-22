@@ -175,7 +175,7 @@ ul { list-style: none; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 28px;
-  height: 76px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -183,7 +183,7 @@ ul { list-style: none; }
 
 .logo { display: flex; align-items: center; line-height: 1; }
 .logo-img {
-  height: 52px;
+  height: 78px;
   width: auto;
   display: block;
 }
@@ -269,7 +269,7 @@ ul { list-style: none; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 28px;
-  padding-top: 76px;
+  padding-top: 90px;
 }
 .hero-eyebrow {
   font-size: 11px;

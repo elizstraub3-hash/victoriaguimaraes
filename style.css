@@ -1112,12 +1112,32 @@ ul { list-style: none; }
   .nav-links.open { display: flex; }
   .hamburger { display: flex; }
 
-  .hero-title { font-size: 2.9rem; }
-  .hero-btns { flex-direction: column; align-items: flex-start; }
+  /* Hero mobile: centralizar Victoria e texto na base */
+  .hero { align-items: flex-end; }
+  .hero-bg { object-position: 35% center; }
+  .hero-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(13,13,13,0.96) 0%,
+      rgba(13,13,13,0.55) 42%,
+      rgba(13,13,13,0.10) 100%
+    );
+  }
+  .hero-content {
+    padding-bottom: 56px;
+    padding-top: 0;
+    text-align: center;
+  }
+  .hero-title { font-size: 2.5rem; }
+  .hero-eyebrow { text-align: center; }
+  .hero-body { text-align: center; margin: 0 auto 36px; }
+  .hero-btns { flex-direction: column; align-items: center; }
 
-  .stats { gap: 24px; }
+  /* Stats: alinhar na mesma altura */
+  .stats { gap: 24px; align-items: flex-start; }
+  .stat strong { font-size: 1.7rem; }
+
   .course-card { padding: 36px 28px; }
-
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .schedule-box { padding: 36px 28px; }
 }

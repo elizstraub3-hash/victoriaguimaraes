@@ -762,6 +762,58 @@ ul { list-style: none; }
 .gift-course-card .btn { width: 100%; text-align: center; justify-content: center; }
 
 /* ========================
+   KIT SECTION
+   ======================== */
+.kit-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.kit-image img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 24px 56px var(--shadow-heavy);
+}
+.kit-text .section-title { margin-top: 8px; }
+.kit-text p { color: var(--text-muted); margin-bottom: 28px; }
+
+/* ========================
+   RESULTS GRID
+   ======================== */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.result-card {
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(201,169,110,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 56px var(--shadow);
+}
+.result-card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.result-label {
+  background: var(--white);
+  padding: 22px 26px;
+}
+.result-label .section-tag { margin-bottom: 6px; }
+.result-label h4 { font-size: 1.1rem; margin-bottom: 6px; }
+.result-label p { font-size: 0.88rem; color: var(--text-muted); }
+
+/* ========================
    FOOTER
    ======================== */
 .footer {
@@ -841,6 +893,8 @@ ul { list-style: none; }
   .course-visual-box { position: static; }
   .schedule-layout { grid-template-columns: 1fr; }
   .schedule-box { position: static; }
+  .kit-layout { grid-template-columns: 1fr; gap: 48px; }
+  .kit-image img { height: 380px; }
 }
 
 @media (max-width: 900px) {
@@ -852,6 +906,8 @@ ul { list-style: none; }
   .gift-text { text-align: center; }
   .includes-grid { grid-template-columns: 1fr; }
   .how-steps { grid-template-columns: 1fr; max-width: 380px; margin: 56px auto 0; }
+  .results-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .result-card img { height: 320px; }
 }
 
 @media (max-width: 768px) {

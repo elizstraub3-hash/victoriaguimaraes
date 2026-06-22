@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabela de Precos – Victoria Guimaraes</title>
+  <meta name="description" content="Confira a tabela de precos dos servicos de sobrancelhas e micropigmentacao com Victoria Guimaraes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-name">Victoria Guimaraes</span>
+        <span class="logo-sub">Designer de Sobrancelhas</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="procedimentos.html">Procedimentos</a></li>
+        <li><a href="precos.html" class="active">Tabela de Precos</a></li>
+        <li><a href="agendar.html">Agendar</a></li>
+        <li><a href="agendar.html" class="nav-cta">Agendar Agora</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-tag light">Investimento</span>
+      <h1 class="section-title light">Tabela de <em>Precos</em></h1>
+      <p class="section-desc">Confira os valores dos nossos servicos e escolha o que mais combina com voce</p>
+    </div>
+  </section>
+
+  <!-- PRICE TABLE -->
+  <section class="price-page">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-tag">Servicos Disponiveis</span>
+        <h2 class="section-title">Nossos <em>Servicos</em></h2>
+        <p class="section-desc">Todos os procedimentos realizados com produtos de alta qualidade e tecnica personalizada</p>
+      </div>
+
+      <div class="price-grid fade-in">
+
+        <!-- Design com Henna -->
+        <div class="price-card">
+          <span class="service-tag">Design</span>
+          <h3>Design com Henna</h3>
+          <p>Pessoas que tem sobrancelhas ralas, finas, curtas, com falhas ou diferentes umas das outras, podem corrigi-las e realca-las por meio da aplicacao de henna temporaria</p>
+          <div class="price-tags">
+            <div class="ptag gold-tag">
+              R$55,00
+              <span class="ptag-label">com henna</span>
+            </div>
+            <div class="ptag">
+              R$20,00
+              <span class="ptag-label">sem design</span>
+            </div>
+          </div>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20Design%20com%20Henna" class="price-btn" target="_blank" rel="noopener">Agendar este Servico</a>
+        </div>
+
+        <!-- Design Personalizado -->
+        <div class="price-card">
+          <span class="service-tag">Design</span>
+          <h3>Design Personalizado</h3>
+          <p>O design personalizado e aquele que respeita o rosto, os gostos pessoais e a personalidade de cada cliente. Usando pinca, cera e navalha</p>
+          <div class="price-tags">
+            <div class="ptag gold-tag">
+              R$35,00
+              <span class="ptag-label">design</span>
+            </div>
+            <div class="ptag">
+              R$15,00
+              <span class="ptag-label">so navalha</span>
+            </div>
+          </div>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20Design%20Personalizado" class="price-btn" target="_blank" rel="noopener">Agendar este Servico</a>
+        </div>
+
+        <!-- Brow Lamination -->
+        <div class="price-card">
+          <span class="service-tag">Laminacao</span>
+          <h3>Brow Lamination</h3>
+          <p>Consiste em deixar os pelinhos alinhados para cima, o que da um toque sexy e bem natural</p>
+          <div class="price-tags">
+            <div class="ptag gold-tag">
+              R$110,00
+              <span class="ptag-label">brow</span>
+            </div>
+            <div class="ptag">
+              R$150,00
+              <span class="ptag-label">brow + henna</span>
+            </div>
+          </div>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20Brow%20Lamination" class="price-btn" target="_blank" rel="noopener">Agendar este Servico</a>
+        </div>
+
+        <!-- Bulco -->
+        <div class="price-card">
+          <span class="service-tag">Depilacao</span>
+          <h3>Bulco</h3>
+          <p>Eliminar ate os menores e mais finos pelos do rosto. Alem disso, o resultado do procedimento tem excelente duracao</p>
+          <div class="price-tags">
+            <div class="ptag gold-tag">
+              R$15,00
+              <span class="ptag-label">cera</span>
+            </div>
+            <div class="ptag">
+              15 a 30 dias
+              <span class="ptag-label">duracao</span>
+            </div>
+          </div>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20Bulco" class="price-btn" target="_blank" rel="noopener">Agendar este Servico</a>
+        </div>
+
+        <!-- Micropigmentacao Fio a Fio -->
+        <div class="price-card micro-card">
+          <span class="service-tag">Micropigmentacao</span>
+          <h3>Fio a Fio</h3>
+          <p>Preenchemos as falhas e damos volume na sobrancelha fazendo fios, nao fica escura e nem desenhada, apenas preenche as falhas, durabilidade de 1 ano</p>
+          <div class="price-tags">
+            <div class="ptag gold-tag">
+              R$399,00
+              <span class="ptag-label">micro</span>
+            </div>
+            <div class="ptag">
+              R$50,00
+              <span class="ptag-label">retoque</span>
+            </div>
+          </div>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20Micropigmentacao%20Fio%20a%20Fio" class="price-btn" target="_blank" rel="noopener">Agendar este Servico</a>
+        </div>
+
+        <!-- Shadow Line -->
+        <div class="price-card micro-card">
+          <span class="service-tag">Micropigmentacao</span>
+          <h3>Shadow Line</h3>
+          <p>Mistura das duas tecnicas, fios no inicio e um leve sombreado no final das sobrancelhas com a Shadow</p>
+          <div class="price-tags">
+            <div class="ptag gold-tag">
+              R$399,00
+              <span class="ptag-label">micro</span>
+            </div>
+            <div class="ptag">
+              R$50,00
+              <span class="ptag-label">retoque</span>
+            </div>
+          </div>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20Shadow%20Line" class="price-btn" target="_blank" rel="noopener">Agendar este Servico</a>
+        </div>
+
+        <!-- Shadow -->
+        <div class="price-card micro-card">
+          <span class="service-tag">Micropigmentacao</span>
+          <h3>Shadow</h3>
+          <p>Traz um efeito henna, maquiagem, indicado pra amantes de sobrancelhas escurinhas e desenhadas</p>
+          <div class="price-tags">
+            <div class="ptag gold-tag">
+              R$399,00
+              <span class="ptag-label">micro</span>
+            </div>
+            <div class="ptag">
+              R$50,00
+              <span class="ptag-label">retoque</span>
+            </div>
+          </div>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20Micropigmentacao%20Shadow" class="price-btn" target="_blank" rel="noopener">Agendar este Servico</a>
+        </div>
+
+      </div>
+
+      <div class="price-note fade-in">
+        <p><strong>Importante:</strong> Retoque deve ser feito de 30 a 40 dias no valor de R$50,00. Caso passe de 40 dias sera cobrado um novo valor!</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-dark">
+    <div class="container" style="text-align:center;max-width:640px;">
+      <span class="section-tag light">Pronta para comecar?</span>
+      <h2 class="section-title light">Agende seu <em>horario</em></h2>
+      <p style="color:rgba(255,255,255,.65);margin-bottom:36px;font-size:1rem;">Entre em contato pelo WhatsApp para verificar disponibilidade e agendar seu atendimento.</p>
+      <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20um%20atendimento" class="btn btn-gold" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Victoria Guimaraes</h3>
+          <p>Designer de Sobrancelhas &amp; Educadora de Beleza</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegacao</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="procedimentos.html">Procedimentos</a></li>
+            <li><a href="precos.html">Tabela de Precos</a></li>
+            <li><a href="agendar.html">Agendar</a></li>
+            <li><a href="presente.html">Dar de Presente</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <p>Entre em contato via WhatsApp para agendamentos e duvidas sobre os servicos.</p>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20mais%20informacoes" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Victoria Guimaraes. Todos os direitos reservados.</p>
+        <p style="margin-top:8px;font-size:10px;opacity:.25;letter-spacing:.5px;">criado por Elizandra Straub</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

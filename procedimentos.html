@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procedimentos – Victoria Guimaraes</title>
+  <meta name="description" content="Informacoes sobre procedimentos, restricoes, cuidados pos-procedimento e localizacao do studio de Victoria Guimaraes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-name">Victoria Guimaraes</span>
+        <span class="logo-sub">Designer de Sobrancelhas</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="procedimentos.html" class="active">Procedimentos</a></li>
+        <li><a href="precos.html">Tabela de Precos</a></li>
+        <li><a href="agendar.html">Agendar</a></li>
+        <li><a href="agendar.html" class="nav-cta">Agendar Agora</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-tag light">Studio Victoria Guimaraes</span>
+      <h1 class="section-title light">Procedimentos <em>&amp; Informacoes</em></h1>
+      <p class="section-desc">Tudo o que voce precisa saber antes e depois do seu atendimento</p>
+    </div>
+  </section>
+
+  <!-- INFORMACOES SOBRE O PROCEDIMENTO -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Atencao</span>
+        <h2 class="section-title">Informacoes sobre o <em>Procedimento</em></h2>
+        <p class="section-desc">Leia com atencao antes de agendar seu horario</p>
+      </div>
+      <div class="proc-grid fade-in">
+        <div class="proc-card dark">
+          <h3>Regras do Atendimento</h3>
+          <ul>
+            <li>Proibido trazer acompanhante (somente se necessario)</li>
+            <li>Tolerancia de no maximo 10 minutos de atraso, caso passe nao sera atendido</li>
+            <li>Caso desmarque o horario em cima da hora ou nao compareca no dia, sera cobrado uma multa do mesmo valor do procedimento</li>
+            <li>Sera remarcado o horario mediante comprovante da multa</li>
+          </ul>
+        </div>
+        <div class="proc-card">
+          <h3>Restricoes para Micropigmentacao</h3>
+          <ul>
+            <li>Cirurgia recente nos olhos</li>
+            <li>Fazendo tratamento de quimioterapia</li>
+            <li>Conjuntivite</li>
+            <li>Blefarite e Tercol</li>
+            <li>Gravidas sem autorizacao do obstetra</li>
+            <li>Diabetes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETOQUES ANUAL E PAGAMENTO -->
+  <section class="section bg-cream">
+    <div class="container">
+      <div class="proc-grid fade-in">
+
+        <div class="proc-card">
+          <h3>Retoques Anual</h3>
+          <p>Os retoques de micropigmentacao sao cobrados de acordo com o tempo desde o procedimento original.</p>
+          <table class="retoque-table">
+            <tbody>
+              <tr>
+                <td>Retoque ate 1 ano</td>
+                <td>R$150,00</td>
+              </tr>
+              <tr>
+                <td>Retoque apos 1 ano ate 2 anos</td>
+                <td>R$250,00</td>
+              </tr>
+              <tr>
+                <td>Passou de 2 anos</td>
+                <td>Valor normal da micro</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="proc-card">
+          <h3>Formas de Pagamento</h3>
+          <p>Aceitamos as seguintes formas de pagamento para todos os procedimentos.</p>
+          <div class="payment-row">
+            <span class="payment-badge">Pix</span>
+            <span class="payment-badge">Dinheiro</span>
+            <span class="payment-badge">Cartao</span>
+          </div>
+          <br />
+          <p style="font-size:0.88rem;color:var(--text-muted);margin-top:12px;padding-top:16px;border-top:1px solid rgba(201,169,110,0.15);font-style:italic;">Caso tenha micro feita por outra profissional, mandar foto antes para avaliacao.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CUIDADOS POS-PROCEDIMENTO -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Pos-Procedimento</span>
+        <h2 class="section-title">Cuidados <em>essenciais</em></h2>
+        <p class="section-desc">Siga estas orientacoes para garantir o melhor resultado do seu procedimento</p>
+      </div>
+      <div class="proc-grid fade-in">
+
+        <div class="proc-card dark">
+          <h3>Micropigmentacao</h3>
+          <ul>
+            <li>Nao molhar nas primeiras 48h</li>
+            <li>Nao arrancar as cascas</li>
+            <li>Nao cocar</li>
+            <li>Passar somente a pomada durante o processo de casca</li>
+            <li>Apos cair todas as cascas, passar protetor solar todos os dias</li>
+          </ul>
+        </div>
+
+        <div class="proc-card">
+          <h3>Henna</h3>
+          <ul>
+            <li>Nao molhar nas primeiras 12 horas</li>
+            <li>Evite sauna, vapor e banho quente</li>
+            <li>Nao ficar passando a mao, creme, produto oleoso na sobrancelha</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO CHEGAR NO STUDIO -->
+  <section class="location-section">
+    <div class="container">
+      <div class="location-grid fade-in">
+        <div class="location-text">
+          <span class="section-tag">Localizacao</span>
+          <h2>Como <em>Chegar</em></h2>
+          <div class="address">
+            <strong>Studio Victoria Guimaraes</strong>
+            Rua Angelina Cavalli, 575 - Maranaca/Eucalipto
+          </div>
+          <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:28px;">Atendimento com horario agendado. Entre em contato pelo WhatsApp para agendar seu horario.</p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="https://maps.google.com/?q=Rua+Angelina+Cavalli,+575,+Maracan%C3%A3,+Curitiba,+PR" target="_blank" rel="noopener" class="btn btn-gold">Ver no Google Maps</a>
+            <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20um%20atendimento" target="_blank" rel="noopener" class="btn btn-ghost">Agendar pelo WhatsApp</a>
+          </div>
+        </div>
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.!2d-49.35!3d-25.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+Angelina+Cavalli+575!5e0!3m2!1spt!2sbr!4v1"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localizacao do Studio Victoria Guimaraes">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Victoria Guimaraes</h3>
+          <p>Designer de Sobrancelhas &amp; Educadora de Beleza</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegacao</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="procedimentos.html">Procedimentos</a></li>
+            <li><a href="precos.html">Tabela de Precos</a></li>
+            <li><a href="agendar.html">Agendar</a></li>
+            <li><a href="presente.html">Dar de Presente</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <p>Entre em contato via WhatsApp para agendamentos e duvidas sobre os servicos.</p>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20mais%20informacoes" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Victoria Guimaraes. Todos os direitos reservados.</p>
+        <p style="margin-top:8px;font-size:10px;opacity:.25;letter-spacing:.5px;">criado por Elizandra Straub</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

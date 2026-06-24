@@ -9,62 +9,113 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
-  </style>
 </head>
 <body>
+
+  <!-- WELCOME MODAL -->
+  <div class="welcome-modal" id="welcome-modal">
+    <div class="welcome-backdrop" id="welcomeBackdrop"></div>
+    <div class="welcome-card">
+      <button class="welcome-close" id="welcomeClose" aria-label="Fechar">&times;</button>
+      <span class="section-tag">Bem-vinda</span>
+      <h2>Studio <em>Victoria Guimaraes</em></h2>
+      <p>Especializadas em design de sobrancelhas e cursos profissionais que transformam carreiras. Seja bem-vinda ao nosso mundo de beleza e precisao.</p>
+      <div class="welcome-btns">
+        <a href="agendar.html" class="btn btn-taupe">Agendar Agora</a>
+        <a href="cursos.html" class="btn btn-ghost-light">Ver Cursos</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informacoes" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Suporte via WhatsApp">
+    <span>Suporte</span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo"><img src="logo.png" alt="Victoria Guimarães" class="logo-img" /></a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
+      <!-- Esquerda -->
+      <ul class="nav-left">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="cursos.html">Cursos</a></li>
         <li><a href="procedimentos.html">Procedimentos</a></li>
-        <li><a href="precos.html">Tabela de Precos</a></li>
-        <li><a href="agendar.html">Agendar</a></li>
-        <li><a href="agendar.html" class="nav-cta">Agendar Agora</a></li>
-        <li><a href="https://www.instagram.com/studio_victoriaguimaraes?igsh=eGMzdXcyNzF5bHZn" class="nav-instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> Instagram</a></li>
       </ul>
+
+      <!-- Logo centralizada -->
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Victoria Guimaraes" class="logo-img" />
+      </a>
+
+      <!-- Direita -->
+      <ul class="nav-right">
+        <li><a href="precos.html">Precos</a></li>
+        <li><a href="agendar.html" class="nav-cta">Agendar</a></li>
+        <li>
+          <a href="https://www.instagram.com/studio_victoriaguimaraes?igsh=eGMzdXcyNzF5bHZn" class="nav-instagram-link" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Hamburger mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+
+    <!-- Mobile nav panel -->
+    <nav class="nav-mobile" id="navMobile">
+      <a href="index.html">Home</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="procedimentos.html">Procedimentos</a>
+      <a href="precos.html">Tabela de Precos</a>
+      <a href="agendar.html">Agendar</a>
+      <a href="https://www.instagram.com/studio_victoriaguimaraes?igsh=eGMzdXcyNzF5bHZn" target="_blank" rel="noopener">Instagram</a>
+    </nav>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <img src="victoria-hero.jpg" alt="Victoria Guimaraes" class="hero-bg" />
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Design de Sobrancelhas</p>
-      <h1 class="hero-title">Sobrancelhas que<br><em>transformam</em></h1>
-      <p class="hero-body">Atendimento personalizado e cursos profissionais para quem quer dominar a arte das sobrancelhas perfeitas.</p>
-      <div class="hero-btns">
-        <a href="agendar.html" class="btn btn-gold">Agendar Sobrancelha</a>
-        <a href="cursos.html" class="btn btn-outline">Ver Cursos</a>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text fade-in">
+          <p class="hero-eyebrow">Studio Victoria Guimaraes</p>
+          <h1 class="hero-title">Sobrancelhas que<br><em>transformam</em></h1>
+          <p class="hero-body">Atendimento personalizado e cursos profissionais para quem quer dominar a arte das sobrancelhas perfeitas.</p>
+          <div class="hero-btns">
+            <a href="agendar.html" class="btn btn-taupe">Agendar Sobrancelha</a>
+            <a href="cursos.html" class="btn btn-ghost-light">Ver Cursos</a>
+          </div>
+        </div>
+        <div class="hero-photo fade-in">
+          <div class="arch-frame">
+            <img src="victoria-about2.jpg" alt="Victoria Guimaraes – Designer de Sobrancelhas" />
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section">
+  <!-- SOBRE -->
+  <section class="section bg-light">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-images fade-in">
-          <img src="victoria-about1.jpg" alt="Victoria Guimaraes trabalhando" class="about-img-main" />
-          <img src="victoria-about2.jpg" alt="Resultado do atendimento" class="about-img-accent" />
+      <div class="split-section">
+        <div class="split-photo fade-in">
+          <div class="arch-frame-sm">
+            <img src="victoria-about1.jpg" alt="Victoria Guimaraes trabalhando" />
+          </div>
         </div>
-        <div class="about-text fade-in">
-          <span class="section-tag">Sobre mim</span>
-          <h2 class="section-title">Victoria<br><em>Guimaraes</em></h2>
-          <p class="about-lead">Designer de Sobrancelhas especializada em técnicas que valorizam a beleza natural de cada rosto.</p>
-          <p>Com anos de experiência no mercado da beleza, Victoria desenvolveu um olhar único para criar sobrancelhas personalizadas que realçam a identidade de cada cliente.</p>
-          <p>Além de atender presencialmente, Victoria compartilha seu conhecimento através de cursos online completos, formando profissionais prontos para o mercado.</p>
-          <div class="stats">
+        <div class="split-content fade-in">
+          <span class="section-tag dark-tag">Sobre mim</span>
+          <h2 class="section-title on-light">Victoria<br><em>Guimaraes</em></h2>
+          <p class="section-desc on-light">Designer de Sobrancelhas especializada em tecnicas que valorizam a beleza natural de cada rosto.</p>
+          <p style="margin-top:16px;color:var(--text-muted-light);font-size:.97rem;">Com anos de experiencia no mercado da beleza, Victoria desenvolveu um olhar unico para criar sobrancelhas personalizadas que realcam a identidade de cada cliente.</p>
+          <p style="margin-top:10px;color:var(--text-muted-light);font-size:.97rem;">Alem de atender presencialmente, Victoria compartilha seu conhecimento atraves de cursos online completos, formando profissionais prontos para o mercado.</p>
+          <div class="stats-row">
             <div class="stat">
               <strong>+500</strong>
               <span>Clientes atendidas</span>
@@ -74,93 +125,73 @@
               <span>Alunas formadas</span>
             </div>
             <div class="stat">
-              <strong>5</strong>
-              <span>estrelas de avaliação</span>
+              <strong>5 ★</strong>
+              <span>Avaliacao media</span>
+            </div>
+          </div>
+          <a href="agendar.html" class="btn btn-dark">Agendar Atendimento</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURSOS E SERVICOS -->
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-header-c fade-in">
+        <span class="section-tag">Formacao e Atendimento</span>
+        <h2 class="section-title">Nossos <em>Cursos &amp; Servicos</em></h2>
+        <p class="section-desc" style="margin:0 auto;text-align:center;">Conhecimento profissional e atendimento exclusivo para transformar sobrancelhas e carreiras</p>
+      </div>
+      <div class="cards-grid-3" style="margin-top:52px;">
+
+        <!-- Card 1: Design de Sobrancelhas (servico presencial) -->
+        <div class="service-card-new fade-in">
+          <div class="card-img">
+            <img src="victoria-hero.jpg" alt="Design de Sobrancelhas" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Atendimento</span>
+            <h3>Design de Sobrancelhas</h3>
+            <p>Tecnica personalizada para o formato do seu rosto, realcando sua beleza natural com precisao e sofisticacao.</p>
+            <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20um%20Design%20de%20Sobrancelhas" target="_blank" rel="noopener" class="btn-taupe-sm" style="display:flex;align-items:center;gap:8px;justify-content:center;margin-top:auto;">
+              <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Agendar via WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Curso Designer + Henna -->
+        <div class="service-card-new fade-in">
+          <div class="card-img">
+            <img src="resultado-henna.jpg" alt="Designer de Sobrancelhas com Henna" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Curso Online</span>
+            <h3>Designer de Sobrancelhas com Henna</h3>
+            <p>Do zero ao profissional. Aprenda design, mapeamento facial e tecnica completa de henna com certificado incluso.</p>
+            <p class="card-price">R$ 19<span style="font-size:1rem;">,90</span></p>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:auto;">
+              <a href="https://chk.eduzz.com/E9OODY8Q9B" target="_blank" rel="noopener" class="btn-taupe-sm" style="text-align:center;">Comprar Agora</a>
+              <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20tenho%20interesse%20no%20curso%20Designer%20de%20Sobrancelhas%20com%20Henna%20(R%2419%2C90)%20e%20gostaria%20de%20mais%20informacoes" target="_blank" rel="noopener" class="btn-ghost-light" style="display:block;text-align:center;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px 20px;border:2px solid rgba(213,210,203,0.35);border-radius:2px;">Tirar Duvidas</a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section class="section bg-cream">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-tag">O que ofereço</span>
-        <h2 class="section-title">Serviços <em>&amp; Cursos</em></h2>
-        <p class="section-desc">Atendimento exclusivo e formação profissional de excelência para quem busca o melhor em sobrancelhas</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card fade-in">
-          <h3>Design de Sobrancelhas</h3>
-          <p>Técnica personalizada para o formato do seu rosto, realçando sua beleza natural com precisão e sofisticação.</p>
-          <a href="agendar.html" class="service-link">Agendar agora</a>
-        </div>
-        <div class="service-card featured fade-in">
-          <div class="service-badge">Mais Procurado</div>
-          <h3>Cursos Online</h3>
-          <p>Aprenda no seu ritmo com aulas gravadas em alta qualidade e suporte exclusivo para suas dúvidas.</p>
-          <a href="cursos.html" class="service-link">Ver cursos</a>
-        </div>
-        <div class="service-card fade-in">
-          <h3>Cursos Presenciais</h3>
-          <p>Formação intensiva com prática real, atendimento a modelos vivos e certificado reconhecido no mercado.</p>
-          <a href="cursos.html" class="service-link">Saiba mais</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COURSES PREVIEW -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-tag">Formação Profissional</span>
-        <h2 class="section-title">Nossos <em>Cursos</em></h2>
-        <p class="section-desc">Dois cursos completos para diferentes momentos da sua jornada profissional no mundo das sobrancelhas</p>
-      </div>
-      <div class="courses-grid">
-
-        <div class="course-card fade-in">
-          <div class="course-badge">Para Iniciantes</div>
-          <h3>Designer de Sobrancelhas<br><em>com Henna – 2026</em></h3>
-          <p>O curso perfeito para quem esta começando. Aprenda desde o zero até criar designs profissionais com total confiança e segurança.</p>
-          <ul class="course-features">
-            <li>Fundamentos do design de sobrancelhas</li>
-            <li>Técnica completa de henna</li>
-            <li>Mapeamento facial completo</li>
-            <li>Materiais e produtos ideais</li>
-            <li>Certificado de conclusão incluso</li>
-          </ul>
-          <div class="course-price-block">
-            <span class="course-price-label">Valor</span>
-            <span class="course-price-value"><span class="course-price-currency">R$</span>19<span class="course-price-cents">,90</span></span>
+        <!-- Card 3: Curso Brow Lamination -->
+        <div class="service-card-new fade-in">
+          <div class="card-img">
+            <img src="resultado-browlamination.jpg" alt="Brow Lamination" />
           </div>
-          <div class="course-btns">
-            <a href="https://chk.eduzz.com/E9OODY8Q9B" target="_blank" rel="noopener" class="btn btn-gold">Comprar agora</a>
-            <a href="presente.html" class="btn btn-ghost">Dar de presente</a>
-          </div>
-        </div>
-
-        <div class="course-card premium fade-in">
-          <div class="course-badge gold">Técnica Avançada</div>
-          <h3>Brow Lamination<br><em>2026</em></h3>
-          <p>Domine a técnica que esta revolucionando o mercado. Brow Lamination: sobrancelhas impecaveis, estruturadas e duradouras.</p>
-          <ul class="course-features">
-            <li>Técnica completa de laminação</li>
-            <li>Produtos, protocolos e segurança</li>
-            <li>Aulas práticas passo a passo</li>
-            <li>Como precificar e vender o serviço</li>
-            <li>Certificado de conclusão incluso</li>
-          </ul>
-          <div class="course-price-block">
-            <span class="course-price-label">Valor</span>
-            <span class="course-price-value"><span class="course-price-currency">R$</span>29<span class="course-price-cents">,90</span></span>
-          </div>
-          <div class="course-btns">
-            <a href="https://chk.eduzz.com/39YN468JWO" target="_blank" rel="noopener" class="btn btn-gold">Comprar agora</a>
-            <a href="presente.html" class="btn btn-ghost">Dar de presente</a>
+          <div class="card-body">
+            <span class="card-tag">Curso Online</span>
+            <h3>Brow Lamination 2026</h3>
+            <p>Domine a tecnica que esta revolucionando o mercado. Sobrancelhas impecaveis, estruturadas e com resultado duradouro.</p>
+            <p class="card-price">R$ 29<span style="font-size:1rem;">,90</span></p>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:auto;">
+              <a href="https://chk.eduzz.com/39YN468JWO" target="_blank" rel="noopener" class="btn-taupe-sm" style="text-align:center;">Comprar Agora</a>
+              <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20tenho%20interesse%20no%20curso%20Brow%20Lamination%202026%20(R%2429%2C90)%20e%20gostaria%20de%20mais%20informacoes" target="_blank" rel="noopener" class="btn-ghost-light" style="display:block;text-align:center;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px 20px;border:2px solid rgba(213,210,203,0.35);border-radius:2px;">Tirar Duvidas</a>
+            </div>
           </div>
         </div>
 
@@ -168,54 +199,93 @@
     </div>
   </section>
 
-  <!-- RESULTADOS DAS ALUNAS -->
-  <section class="section bg-cream">
+  <!-- DEPOIMENTOS -->
+  <section class="section bg-light">
     <div class="container">
-      <div class="section-header fade-in">
+      <div class="section-header-c fade-in">
+        <span class="section-tag dark-tag">O que dizem</span>
+        <h2 class="section-title on-light">Depoimentos das <em>Alunas</em></h2>
+      </div>
+      <div class="testimonials-grid" style="margin-top:52px;">
+        <div class="testimonial-card fade-in">
+          <div class="stars">★★★★★</div>
+          <p>"O curso da Victoria mudou completamente minha visao de sobrancelhas. As aulas sao super detalhadas e ela ensina com muita dedicacao. Ja estou atendendo clientes!"</p>
+          <span class="client-name">Ana Paula S.</span>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="stars">★★★★★</div>
+          <p>"Fiz o curso de Brow Lamination e foi incrivel. O conteudo e muito completo e o suporte da Victoria e excelente. Super recomendo para quem quer entrar no mercado de beleza."</p>
+          <span class="client-name">Camila R.</span>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="stars">★★★★★</div>
+          <p>"Sempre fiz sobrancelha com a Victoria e e simplesmente perfeita. Ela entende exatamente o que meu rosto pede. Nao consigo imaginar ir a outro lugar!"</p>
+          <span class="client-name">Fernanda L.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-header-c fade-in">
         <span class="section-tag">Trabalhos Reais</span>
         <h2 class="section-title">Resultados das <em>Nossas Alunas</em></h2>
-        <p class="section-desc">Técnicas ensinadas nos cursos com resultados reais realizados pelas alunas</p>
+        <p class="section-desc" style="margin:0 auto;text-align:center;">Tecnicas ensinadas nos cursos com resultados reais realizados pelas alunas</p>
       </div>
-      <div class="results-grid">
-        <div class="result-card fade-in">
+      <div class="results-grid-3" style="margin-top:52px;">
+        <div class="result-item fade-in">
           <img src="resultado-henna.jpg" alt="Resultado henna de sobrancelhas" />
-          <div class="result-label">
-            <span class="section-tag">Técnica</span>
-            <h4>Henna de Sobrancelhas</h4>
-            <p>Coloração natural e definida com durabilidade</p>
-          </div>
         </div>
-        <div class="result-card fade-in">
+        <div class="result-item fade-in">
           <img src="resultado-browlamination.jpg" alt="Resultado Brow Lamination" />
-          <div class="result-label">
-            <span class="section-tag">Técnica</span>
-            <h4>Brow Lamination</h4>
-            <p>Fios estruturados e aspecto natural moderno</p>
-          </div>
+        </div>
+        <div class="result-item fade-in">
+          <img src="kit-aluna.jpg" alt="Kit da aluna – material incluso" />
         </div>
       </div>
-      <div style="text-align:center;margin-top:48px;" class="fade-in">
-        <a href="cursos.html" class="btn btn-gold">Conhecer os Cursos</a>
+      <div style="text-align:center;margin-top:44px;" class="fade-in">
+        <a href="cursos.html" class="btn btn-taupe">Conhecer os Cursos</a>
       </div>
     </div>
   </section>
 
-  <!-- GIFT BANNER -->
-  <section class="gift-banner bg-dark">
+  <!-- AGENDAR / CTA SPLIT -->
+  <section class="section bg-light">
     <div class="container">
-      <div class="gift-inner fade-in">
-        <div class="gift-text">
-          <span class="section-tag light">Presente especial</span>
-          <h2 class="section-title light">Presenteie alguem<br><em>que você ama</em></h2>
-          <p class="section-desc">De o presente mais transformador: conhecimento e uma nova habilidade profissional. Escolha um dos nossos cursos para a pessoa especial da sua vida.</p>
-          <br />
-          <a href="presente.html" class="btn btn-gold">Dar de Presente</a>
-        </div>
-        <div class="gift-visual">
-          <div class="gift-icon-wrap" style="color:var(--gold); font-family:'Playfair Display',serif; font-size:1.1rem; letter-spacing:2px; text-align:center; flex-direction:column; gap:8px;">
-            <span style="font-size:2.8rem; font-weight:700; display:block;">Presente</span>
-            <span style="font-size:.85rem; opacity:.7; letter-spacing:3px; text-transform:uppercase;">para ela</span>
+      <div class="cta-split">
+        <div class="cta-content">
+          <span class="section-tag dark-tag">Servicos Presenciais</span>
+          <h2 class="section-title on-light">Agende o seu <em>Atendimento</em></h2>
+          <p>Escolha o servico desejado e entre em contato diretamente pelo WhatsApp. Victoria cuidara de cada detalhe para realcar sua beleza natural.</p>
+          <div class="services-wa-list" style="margin-top:28px;">
+            <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20um%20Design%20de%20Sobrancelhas" target="_blank" rel="noopener" class="service-wa-link">
+              Design de Sobrancelhas <span>Agendar →</span>
+            </a>
+            <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20Henna%20de%20Sobrancelhas" target="_blank" rel="noopener" class="service-wa-link">
+              Henna de Sobrancelhas <span>Agendar →</span>
+            </a>
+            <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20Brow%20Lamination" target="_blank" rel="noopener" class="service-wa-link">
+              Brow Lamination <span>Agendar →</span>
+            </a>
+            <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20agendar%20Micropigmentacao%20de%20Sobrancelhas" target="_blank" rel="noopener" class="service-wa-link">
+              Micropigmentacao <span>Agendar →</span>
+            </a>
+            <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20informacoes%20sobre%20Revitalizacao%20de%20Sobrancelhas" target="_blank" rel="noopener" class="service-wa-link">
+              Revitalizacao <span>Agendar →</span>
+            </a>
           </div>
+        </div>
+        <div class="cta-card fade-in">
+          <span class="section-tag" style="color:var(--taupe);">Pronta para agendar?</span>
+          <h3>Fale com Victoria</h3>
+          <p>Atendimento personalizado e exclusivo. Entre em contato e agende o seu horario com facilidade.</p>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20horario" target="_blank" rel="noopener" class="btn btn-taupe btn-full" style="display:flex;align-items:center;justify-content:center;gap:10px;">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <p class="cta-addr" style="margin-top:16px;">Curitiba – PR<br>Seg a Sab, 09h–18h</p>
         </div>
       </div>
     </div>
@@ -226,11 +296,11 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>Victoria Guimaraes</h3>
+          <img src="logo.png" alt="Victoria Guimaraes" class="logo-img" />
           <p>Designer de Sobrancelhas &amp; Educadora de Beleza</p>
         </div>
         <div class="footer-col">
-          <h4>Navegação</h4>
+          <h4>Navegacao</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="cursos.html">Cursos</a></li>
@@ -242,14 +312,20 @@
         </div>
         <div class="footer-col">
           <h4>Contato</h4>
-          <p>Entre em contato via WhatsApp para agendamentos e dúvidas sobre os cursos.</p>
-          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20mais%20informações" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
-                    <a href="https://www.instagram.com/studio_victoriaguimaraes?igsh=eGMzdXcyNzF5bHZn" class="footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> @studio_victoriaguimaraes</a>
+          <p>Entre em contato via WhatsApp para agendamentos e duvidas sobre os cursos.</p>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20mais%20informacoes" class="btn btn-whatsapp" target="_blank" rel="noopener" style="margin-top:8px;padding:12px 24px;font-size:10px;">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="https://www.instagram.com/studio_victoriaguimaraes?igsh=eGMzdXcyNzF5bHZn" class="footer-social" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            @studio_victoriaguimaraes
+          </a>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Victoria Guimaraes. Todos os direitos reservados.</p>
-        <p style="margin-top:8px;font-size:10px;opacity:.25;letter-spacing:.5px;">criado por Elizandra Straub</p>
+        <p style="font-size:10px;opacity:.22;letter-spacing:.5px;">criado por Elizandra Straub</p>
       </div>
     </div>
   </footer>

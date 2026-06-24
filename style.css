@@ -459,7 +459,7 @@ ul { list-style: none; }
   width: 100%;
   height: 580px;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 35%;
 }
 
 /* ========================
@@ -1088,7 +1088,9 @@ ul { list-style: none; }
    ======================== */
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-photo { display: none; }
+  .hero-photo { display: flex; order: -1; padding-top: 30px; justify-content: center; }
+  .hero-photo .arch-frame { max-width: 320px; }
+  .hero-photo .arch-frame img { height: 400px; }
   .split-section { grid-template-columns: 1fr; gap: 48px; }
   .split-section.reverse { direction: ltr; }
   .cta-split { grid-template-columns: 1fr; }

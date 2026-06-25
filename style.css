@@ -44,6 +44,33 @@ ul { list-style: none; }
 .bg-light { background: var(--taupe-light); }
 .bg-white { background: var(--white); }
 
+/* Cursos section with Victoria background */
+.section-cursos-bg {
+  position: relative;
+  background: url('victoria-cursos.jpg') left center / cover no-repeat;
+}
+.section-cursos-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(22,18,18,0.72) 0%,
+    rgba(22,18,18,0.88) 40%,
+    rgba(22,18,18,0.96) 100%
+  );
+}
+@media (max-width: 768px) {
+  .section-cursos-bg { background-position: left top; }
+  .section-cursos-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(22,18,18,0.55) 0%,
+      rgba(22,18,18,0.88) 35%,
+      rgba(22,18,18,0.97) 100%
+    );
+  }
+}
+
 /* ========================
    BOTÕES
    ======================== */
@@ -167,6 +194,7 @@ ul { list-style: none; }
   margin-bottom: 12px;
 }
 .section-tag.dark-tag { color: var(--taupe-dark); }
+.section-tag.light { color: var(--taupe); }
 
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
@@ -337,7 +365,7 @@ ul { list-style: none; }
   justify-content: center;
   justify-self: center;
 }
-.logo-img { height: 72px; width: auto; display: block; }
+.logo-img { height: 64px; width: auto; max-width: 160px; display: block; border-radius: 3px; }
 
 .hamburger {
   display: none;
@@ -766,7 +794,7 @@ ul { list-style: none; }
   gap: 52px;
   margin-bottom: 52px;
 }
-.footer-brand .logo-img { height: 60px; margin-bottom: 16px; }
+.footer-brand .logo-img { height: 52px; max-width: 140px; margin-bottom: 16px; border-radius: 3px; }
 .footer-brand p { color: var(--text-muted-dark); font-size: 0.88rem; }
 .footer-col h4 {
   font-size: 9px;

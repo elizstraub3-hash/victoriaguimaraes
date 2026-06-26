@@ -4,11 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dar de Presente – Victoria Guimaraes</title>
-  <meta name="description" content="Presente um curso de design de sobrancelhas ou brow lamination para alguem especial. O presente que transforma carreiras." />
+  <meta name="description" content="Presenteie alguem especial com um procedimento de sobrancelhas feito pela Victoria Guimaraes. Design, henna, brow lamination e mais." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .gift-proc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+    }
+    .gift-proc-card {
+      background: #0d0d0d;
+      border: 1px solid rgba(198,190,181,0.12);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color 0.2s;
+    }
+    .gift-proc-card:hover { border-color: rgba(198,190,181,0.30); }
+    .gift-proc-icon {
+      color: var(--taupe);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+    .gift-proc-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: #fff;
+      margin: 0;
+    }
+    .gift-proc-card p {
+      color: rgba(255,255,255,0.60);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      flex: 1;
+    }
+    @media (max-width: 900px) {
+      .gift-proc-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .gift-proc-grid { grid-template-columns: 1fr; }
+      .gift-proc-card { padding: 28px 22px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -72,8 +114,8 @@
   <section class="page-hero">
     <div class="container">
       <span class="section-tag light">Presente Especial</span>
-      <h1 class="section-title">Presenteie com <em>conhecimento</em></h1>
-      <p class="section-desc">O presente mais transformador que você pode dar: uma nova habilidade profissional</p>
+      <h1 class="section-title">Presenteie com <em>beleza</em></h1>
+      <p class="section-desc">O presente mais especial que você pode dar: um cuidado profissional de sobrancelhas feito pela Victoria</p>
     </div>
   </section>
 
@@ -82,8 +124,8 @@
     <div class="container">
       <div class="gift-intro fade-in">
         <span class="section-tag">Por que presentear</span>
-        <h2 class="section-title">O presente que <em>muda vidas</em></h2>
-        <p>Conhecimento e o presente que não se perde. Ao presentear alguem com um de nossos cursos, você esta dando a ela a oportunidade de aprender uma nova profissão, aumentar sua renda e realizar um sonho.</p>
+        <h2 class="section-title">O presente que <em>transforma</em></h2>
+        <p>Presenteie alguém especial com um procedimento profissional de sobrancelhas. Um mimo que ela vai adorar — design, henna, brow lamination e muito mais, feitos com toda a técnica e carinho da Victoria.</p>
       </div>
     </div>
   </section>
@@ -92,63 +134,74 @@
   <section class="section bg-light">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-tag">Simples e rapido</span>
+        <span class="section-tag">Simples e rápido</span>
         <h2 class="section-title">Como <em>funciona</em></h2>
-        <p class="section-desc">Em tres passos simples você presenteia quem você ama com um curso transformador</p>
+        <p class="section-desc">Em três passos simples você presenteia quem você ama com um procedimento exclusivo</p>
       </div>
       <div class="how-steps">
         <div class="how-step fade-in">
           <div class="step-num">01</div>
-          <h4>Escolha o Curso</h4>
-          <p>Selecione qual dos nossos cursos e o mais adequado para a pessoa que você quer presentear.</p>
+          <h4>Escolha o Procedimento</h4>
+          <p>Selecione qual procedimento é o mais adequado para a pessoa que você quer presentear.</p>
         </div>
         <div class="how-step fade-in">
           <div class="step-num">02</div>
-          <h4>Realize a Compra</h4>
-          <p>Finalize a compra na plataforma Eduzz com total segurança. Aceita cartao, pix e boleto.</p>
+          <h4>Fale com a Victoria</h4>
+          <p>Entre em contato pelo WhatsApp informando que é um presente. Victoria vai confirmar disponibilidade e agendar.</p>
         </div>
         <div class="how-step fade-in">
           <div class="step-num">03</div>
-          <h4>Envie o Acesso</h4>
-          <p>Apos a compra, envie o acesso para a pessoa presenteada. Ela tera acesso imédiato e vitalício ao conteúdo.</p>
+          <h4>Presenteie!</h4>
+          <p>Avise a presenteada sobre o agendamento e deixe ela desfrutar de um atendimento exclusivo e inesquecível.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CHOOSE COURSE -->
+  <!-- CHOOSE PROCEDURE -->
   <section class="section">
     <div class="container">
       <div class="section-header fade-in">
         <span class="section-tag">Selecione o presente</span>
-        <h2 class="section-title">Qual curso você<br><em>quer presentear?</em></h2>
-        <p class="section-desc">Escolha o curso ideal de acordo com o perfil de quem você quer presentear</p>
+        <h2 class="section-title">Qual procedimento você<br><em>quer presentear?</em></h2>
+        <p class="section-desc">Escolha o procedimento ideal para quem você quer surpreender</p>
       </div>
 
-      <div class="gift-courses-grid">
+      <div class="gift-proc-grid">
 
-        <div class="gift-course-card fade-in">
-          <div class="course-badge" style="margin-bottom:20px;">Para Iniciantes</div>
-          <h3>Designer de Sobrancelhas<br><em style="color:var(--taupe);">Iniciante 2026</em></h3>
-          <p>Ideal para quem quer começar do zero e aprender a profissão de designer de sobrancelhas de forma completa e acessivel.</p>
-          <ul style="text-align:left;margin-bottom:28px;">
-            <li style="font-size:.88rem;color:var(--text-muted);padding:5px 0;border-bottom:1px solid rgba(201,169,110,.12);">Modulos completos do basico ao avançado</li>
-            <li style="font-size:.88rem;color:var(--text-muted);padding:5px 0;border-bottom:1px solid rgba(201,169,110,.12);">Acesso vitalício ao conteúdo</li>
-            <li style="font-size:.88rem;color:var(--text-muted);padding:5px 0;">Certificado de conclusão incluso</li>
-          </ul>
-          <a href="https://chk.eduzz.com/E9OODY8Q9B" target="_blank" rel="noopener" class="btn btn-taupe" style="display:block;text-align:center;">Presentear com este curso</a>
+        <div class="gift-proc-card fade-in">
+          <div class="gift-proc-icon">✦</div>
+          <h3>Design de Sobrancelhas</h3>
+          <p>A técnica clássica e essencial. Modelagem personalizada para o formato do rosto, realçando a beleza natural com precisão.</p>
+          <a href="https://wa.me/5541996466824?text=Ol%C3%A1%20Victoria%2C%20quero%20presentear%20algu%C3%A9m%20com%20um%20Design%20de%20Sobrancelhas.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="btn btn-taupe" style="display:block;text-align:center;margin-top:auto;">Presentear via WhatsApp</a>
         </div>
 
-        <div class="gift-course-card dark-card fade-in">
-          <div class="course-badge gold-badge" style="margin-bottom:20px;">Técnica Avançada</div>
-          <h3>Brow Lamination<br><em style="color:var(--gold-light);">2026</em></h3>
-          <p>Perfeito para profissionais da beleza que ja atuam na area e querem dominar a técnica de brow lamination e ampliar seus serviços.</p>
-          <ul style="text-align:left;margin-bottom:28px;">
-            <li style="font-size:.88rem;color:rgba(255,255,255,.65);padding:5px 0;border-bottom:1px solid rgba(201,169,110,.15);">Protocolo completo de laminação</li>
-            <li style="font-size:.88rem;color:rgba(255,255,255,.65);padding:5px 0;border-bottom:1px solid rgba(201,169,110,.15);">Acesso vitalício ao conteúdo</li>
-            <li style="font-size:.88rem;color:rgba(255,255,255,.65);padding:5px 0;">Certificado de conclusão incluso</li>
-          </ul>
-          <a href="https://chk.eduzz.com/39YN468JWO" target="_blank" rel="noopener" class="btn btn-taupe" style="display:block;text-align:center;">Presentear com este curso</a>
+        <div class="gift-proc-card fade-in">
+          <div class="gift-proc-icon">✦</div>
+          <h3>Henna de Sobrancelhas</h3>
+          <p>Design + coloração natural com henna para sobrancelhas mais definidas e com aspecto preenchido por até 4 semanas.</p>
+          <a href="https://wa.me/5541996466824?text=Ol%C3%A1%20Victoria%2C%20quero%20presentear%20algu%C3%A9m%20com%20Henna%20de%20Sobrancelhas.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="btn btn-taupe" style="display:block;text-align:center;margin-top:auto;">Presentear via WhatsApp</a>
+        </div>
+
+        <div class="gift-proc-card fade-in">
+          <div class="gift-proc-icon">✦</div>
+          <h3>Brow Lamination</h3>
+          <p>A técnica queridinha do momento. Sobrancelhas alinhadas, estruturadas e com efeito natural de fios impecáveis por semanas.</p>
+          <a href="https://wa.me/5541996466824?text=Ol%C3%A1%20Victoria%2C%20quero%20presentear%20algu%C3%A9m%20com%20Brow%20Lamination.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="btn btn-taupe" style="display:block;text-align:center;margin-top:auto;">Presentear via WhatsApp</a>
+        </div>
+
+        <div class="gift-proc-card fade-in">
+          <div class="gift-proc-icon">✦</div>
+          <h3>Micropigmentação</h3>
+          <p>Solução semipermanente para sobrancelhas mais preenchidas e perfeitas todos os dias, sem precisar preencher na maquiagem.</p>
+          <a href="https://wa.me/5541996466824?text=Ol%C3%A1%20Victoria%2C%20quero%20presentear%20algu%C3%A9m%20com%20Micropigmenta%C3%A7%C3%A3o%20de%20Sobrancelhas.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="btn btn-taupe" style="display:block;text-align:center;margin-top:auto;">Presentear via WhatsApp</a>
+        </div>
+
+        <div class="gift-proc-card fade-in">
+          <div class="gift-proc-icon">✦</div>
+          <h3>Revitalização</h3>
+          <p>Tratamento especial para nutrir, hidratar e revitalizar os fios das sobrancelhas, deixando-os mais saudáveis e bonitos.</p>
+          <a href="https://wa.me/5541996466824?text=Ol%C3%A1%20Victoria%2C%20quero%20presentear%20algu%C3%A9m%20com%20Revitaliza%C3%A7%C3%A3o%20de%20Sobrancelhas.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener" class="btn btn-taupe" style="display:block;text-align:center;margin-top:auto;">Presentear via WhatsApp</a>
         </div>
 
       </div>
@@ -160,8 +213,8 @@
     <div class="container" style="text-align:center;max-width:640px;">
       <span class="section-tag light">Dúvidas?</span>
       <h2 class="section-title">Precisa de <em>ajuda</em>?</h2>
-      <p style="color:rgba(255,255,255,.65);margin-bottom:36px;font-size:1rem;">Se tiver alguma duvida sobre qual curso escolher ou como funciona o processo de presente, entre em contato pelo WhatsApp. Victoria vai te ajudar a escolher a melhor opcao.</p>
-      <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20dar%20um%20curso%20de%20presente%20e%20tenho%20algumas%20dúvidas" class="btn btn-taupe" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+      <p style="color:rgba(255,255,255,.65);margin-bottom:36px;font-size:1rem;">Se tiver alguma dúvida sobre qual procedimento escolher ou como funciona o presente, entre em contato pelo WhatsApp. Victoria vai te ajudar a escolher a melhor opção.</p>
+      <a href="https://wa.me/5541996466824?text=Ol%C3%A1%20Victoria%2C%20gostaria%20de%20dar%20um%20procedimento%20de%20presente%20e%20tenho%20algumas%20d%C3%BAvidas" class="btn btn-taupe" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
     </div>
   </section>
 
@@ -186,9 +239,9 @@
         </div>
         <div class="footer-col">
           <h4>Contato</h4>
-          <p>Entre em contato via WhatsApp para agendamentos e dúvidas sobre os cursos.</p>
-          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20mais%20informações" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
-                    <a href="https://www.instagram.com/studio_victoriaguimaraes?igsh=eGMzdXcyNzF5bHZn" class="footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> @studio_victoriaguimaraes</a>
+          <p>Entre em contato via WhatsApp para agendamentos e dúvidas sobre os procedimentos.</p>
+          <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20gostaria%20de%20mais%20informacoes" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/studio_victoriaguimaraes?igsh=eGMzdXcyNzF5bHZn" class="footer-social" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> @studio_victoriaguimaraes</a>
         </div>
       </div>
       <div class="footer-bottom">

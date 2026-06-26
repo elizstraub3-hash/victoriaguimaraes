@@ -862,6 +862,37 @@ ul { list-style: none; }
 }
 
 /* ========================
+   MINHAS CLIENTES SLIDER
+   ======================== */
+.section-clientes { padding-top: 80px; padding-bottom: 0; overflow: hidden; }
+.section-clientes .section-header-c { margin-bottom: 52px; }
+.clientes-slider-wrap { width: 100%; overflow: hidden; }
+.clientes-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: clientesScroll 28s linear infinite;
+}
+.clientes-track:hover { animation-play-state: paused; }
+.cliente-img {
+  width: 320px;
+  height: 420px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: block;
+}
+@keyframes clientesScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (max-width: 768px) {
+  .cliente-img { width: 72vw; height: 90vw; max-height: 380px; }
+  .clientes-track { gap: 12px; animation-duration: 22s; }
+}
+
+/* ========================
    FOOTER
    ======================== */
 .footer {

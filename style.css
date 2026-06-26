@@ -468,7 +468,7 @@ ul { list-style: none; }
    ======================== */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 68vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -510,7 +510,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 68vh;
 }
 .hero-center { text-align: center; }
 .hero-text { padding: 48px 0; max-width: 680px; }
@@ -523,10 +523,10 @@ ul { list-style: none; }
   margin-bottom: 14px;
 }
 .hero-title {
-  font-size: clamp(3.2rem, 6.5vw, 5.4rem);
+  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
   color: var(--white);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.12;
   margin-bottom: 18px;
 }
 .hero-title em { color: var(--taupe); font-style: italic; }
@@ -1310,7 +1310,8 @@ ul { list-style: none; }
   .logo { justify-self: center; }
 
   .hero-text { padding: 24px 0; }
-  .hero-title { font-size: 2.8rem; }
+  .hero-title { font-size: 2.0rem; }
+  .arch-frame-sm { margin: 0 auto; }
 
   /* Horizontal slider for cards on mobile */
   .cards-grid-3 {
@@ -1365,7 +1366,7 @@ ul { list-style: none; }
 }
 
 @media (max-width: 480px) {
-  .hero-title { font-size: 2.3rem; }
+  .hero-title { font-size: 1.75rem; }
   .section { padding: 72px 0; }
   .results-grid-3 { grid-template-columns: 1fr; }
   .welcome-card { padding: 40px 28px; }

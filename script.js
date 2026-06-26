@@ -37,6 +37,26 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 fadeEls.forEach(el => observer.observe(el));
 
+// Image reference numbers (visible only with ?ref=1 in URL)
+if (new URLSearchParams(location.search).get('ref') === '1') {
+  document.addEventListener('DOMContentLoaded', () => {
+    const style = document.createElement('style');
+    style.textContent = '.img-ref-badge{position:absolute;top:8px;left:8px;background:#C6BEB5;color:#000;font-family:monospace;font-size:13px;font-weight:700;line-height:1;padding:4px 8px;z-index:9999;pointer-events:none;box-shadow:0 2px 6px rgba(0,0,0,.5);}';
+    document.head.appendChild(style);
+    let n = 1;
+    document.querySelectorAll('img').forEach(img => {
+      if (img.closest('.navbar') || img.closest('.footer')) return;
+      const wrap = img.parentElement;
+      const pos = getComputedStyle(wrap).position;
+      if (pos === 'static') wrap.style.position = 'relative';
+      const badge = document.createElement('span');
+      badge.className = 'img-ref-badge';
+      badge.textContent = n++;
+      wrap.appendChild(badge);
+    });
+  });
+}
+
 // Welcome modal
 const modal = document.getElementById('welcome-modal');
 const closeBtn = document.getElementById('welcomeClose');

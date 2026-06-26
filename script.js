@@ -1,10 +1,15 @@
-// Hamburger menu
-const hamburger = document.getElementById('hamburger');
-const navMobile = document.getElementById('navMobile');
-if (hamburger && navMobile) {
-  hamburger.addEventListener('click', () => {
-    navMobile.classList.toggle('open');
-    hamburger.classList.toggle('open');
+// Nav dropdown
+const dropBtn = document.getElementById('navDropBtn');
+const dropPanel = document.getElementById('navDropPanel');
+if (dropBtn && dropPanel) {
+  dropBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropBtn.classList.toggle('open');
+    dropPanel.classList.toggle('open');
+  });
+  document.addEventListener('click', () => {
+    dropBtn.classList.remove('open');
+    dropPanel.classList.remove('open');
   });
 }
 
@@ -20,7 +25,6 @@ const modal = document.getElementById('welcome-modal');
 const closeBtn = document.getElementById('welcomeClose');
 const backdrop = document.getElementById('welcomeBackdrop');
 if (modal) {
-  // Show only once per session
   if (!sessionStorage.getItem('welcomed')) {
     setTimeout(() => { modal.classList.add('active'); }, 900);
     sessionStorage.setItem('welcomed', '1');

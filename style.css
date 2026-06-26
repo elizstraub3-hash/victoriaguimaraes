@@ -1260,6 +1260,23 @@ ul { list-style: none; }
     min-width: 80vw;
     scroll-snap-align: start;
   }
+
+  /* Centralização mobile */
+  .split-content { text-align: center; }
+  .split-content .section-tag { display: block; }
+  .stats-row { justify-content: center; gap: 20px; flex-wrap: wrap; }
+  .stat { text-align: center; }
+  .hero-btns { justify-content: center; }
+  .cta-content { text-align: center; }
+  .cta-content .section-tag { display: block; }
+  .cta-content > p { margin-left: auto; margin-right: auto; }
+  .services-wa-list { text-align: left; }
+  .kit-text { text-align: center; }
+  .kit-text .section-tag { display: block; }
+  .kit-text .module-list { text-align: left; display: inline-block; }
+  .section-clientes .section-header-c { text-align: center; }
+  .page-hero { text-align: center; }
+
   .testimonials-grid { grid-template-columns: 1fr; }
   .results-grid-3 { grid-template-columns: 1fr 1fr; }
   .how-steps { grid-template-columns: 1fr; }
@@ -1270,9 +1287,11 @@ ul { list-style: none; }
   .schedule-layout { grid-template-columns: 1fr; }
   .schedule-box { position: static; }
   .includes-grid { grid-template-columns: 1fr; }
-  .stats-row { gap: 20px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .footer-brand { text-align: center; }
+  .footer-col { text-align: center; }
+  .footer-col ul { padding: 0; list-style: none; }
 }
 
 @media (max-width: 480px) {

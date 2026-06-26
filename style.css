@@ -565,6 +565,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  /* hint arrow on desktop */
 }
 .service-card-new {
   background: rgba(255,255,255,0.04);
@@ -583,6 +584,7 @@ ul { list-style: none; }
 .service-card-new .card-img {
   height: 220px;
   overflow: hidden;
+  position: relative;
 }
 .service-card-new .card-img img {
   width: 100%;
@@ -591,6 +593,32 @@ ul { list-style: none; }
   transition: transform 0.5s;
 }
 .service-card-new:hover .card-img img { transform: scale(1.05); }
+
+/* Result overlay on card image */
+.card-result-wrap { position: relative; }
+.card-result-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(22,18,18,0.92) 0%, rgba(22,18,18,0.45) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 18px 16px;
+  gap: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.card-result-overlay:hover { background: linear-gradient(to top, rgba(22,18,18,0.97) 0%, rgba(22,18,18,0.70) 60%, rgba(22,18,18,0.20) 100%); }
+.card-result-overlay span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--taupe-light);
+  text-align: center;
+  line-height: 1.4;
+}
 .card-body { padding: 28px 30px; flex: 1; display: flex; flex-direction: column; }
 .card-tag {
   font-size: 9px;
@@ -1137,7 +1165,24 @@ ul { list-style: none; }
   .hero-text { padding: 24px 0; }
   .hero-title { font-size: 2.8rem; }
 
-  .cards-grid-3 { grid-template-columns: 1fr; }
+  /* Horizontal slider for cards on mobile */
+  .cards-grid-3 {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px;
+    padding: 8px 20px 20px;
+    margin: 0 -28px;
+    scrollbar-width: none;
+    grid-template-columns: unset;
+  }
+  .cards-grid-3::-webkit-scrollbar { display: none; }
+  .cards-grid-3 .service-card-new {
+    flex: 0 0 80vw;
+    min-width: 80vw;
+    scroll-snap-align: start;
+  }
   .testimonials-grid { grid-template-columns: 1fr; }
   .results-grid-3 { grid-template-columns: 1fr 1fr; }
   .how-steps { grid-template-columns: 1fr; }

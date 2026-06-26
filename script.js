@@ -1,3 +1,20 @@
+// Slider arrow helper
+function initSliderArrows(prevId, nextId, sliderId) {
+  const prev = document.getElementById(prevId);
+  const next = document.getElementById(nextId);
+  const slider = document.getElementById(sliderId);
+  if (!prev || !next || !slider) return;
+  const scroll = (dir) => {
+    const card = slider.querySelector('[class*="card"]');
+    const amount = card ? card.offsetWidth + 14 : slider.offsetWidth * 0.85;
+    slider.scrollBy({ left: dir * amount, behavior: 'smooth' });
+  };
+  prev.addEventListener('click', () => scroll(-1));
+  next.addEventListener('click', () => scroll(1));
+}
+initSliderArrows('cardsPrev', 'cardsNext', 'cardsSlider');
+initSliderArrows('testPrev', 'testNext', 'testSlider');
+
 // Nav dropdown
 const dropBtn = document.getElementById('navDropBtn');
 const dropPanel = document.getElementById('navDropPanel');

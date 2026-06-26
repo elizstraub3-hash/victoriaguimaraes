@@ -862,6 +862,58 @@ ul { list-style: none; }
 }
 
 /* ========================
+   SLIDER ARROWS / HINTS
+   ======================== */
+.slider-nav-row {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+.slider-arrow {
+  background: rgba(198,190,181,0.12);
+  border: 1px solid rgba(198,190,181,0.25);
+  color: var(--taupe-light);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.slider-arrow:hover { background: var(--taupe); color: var(--dark); }
+.slider-hint-text {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(198,190,181,0.5);
+}
+/* show arrows on mobile only */
+@media (max-width: 768px) {
+  .slider-nav-row { display: flex; }
+}
+
+/* testimonials slider on mobile */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px;
+    scrollbar-width: none;
+  }
+  .testimonials-grid::-webkit-scrollbar { display: none; }
+  .testimonials-grid .testimonial-card {
+    flex: 0 0 85vw;
+    min-width: 85vw;
+    scroll-snap-align: start;
+  }
+}
+
+/* ========================
    MINHAS CLIENTES SLIDER
    ======================== */
 .section-clientes { padding-top: 80px; padding-bottom: 0; overflow: hidden; }

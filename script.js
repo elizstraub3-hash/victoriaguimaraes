@@ -1,3 +1,8 @@
+// Course card expand/collapse
+function toggleCpcard(card) {
+  card.classList.toggle('open');
+}
+
 // Slider arrow helper
 function initSliderArrows(prevId, nextId, sliderId) {
   const prev = document.getElementById(prevId);

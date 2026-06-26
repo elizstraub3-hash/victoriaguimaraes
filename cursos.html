@@ -20,37 +20,48 @@
     .sales-hero p { font-size:1.05rem; color:rgba(255,255,255,0.60); max-width:560px; margin:0 auto 44px; }
     .sales-hero-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
 
-    .curso-card { background:#0d0d0d; border:1px solid rgba(198,190,181,0.12); border-radius:6px; overflow:hidden; margin-bottom:24px; }
-    .curso-card-img { position:relative; height:160px; overflow:hidden; }
-    .curso-card-img img { width:100%; height:100%; object-fit:cover; object-position:center; }
-    .curso-card-img-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.30) 60%, transparent 100%); }
-    .curso-card-img-label { position:absolute; bottom:16px; left:22px; right:22px; }
-    .curso-card-img-label .badge { display:inline-block; background:var(--taupe); color:#000; font-size:8px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; padding:4px 12px; border-radius:20px; margin-bottom:7px; }
-    .curso-card-img-label h2 { font-family:'Playfair Display',serif; font-size:clamp(1.1rem,3vw,1.55rem); color:#fff; line-height:1.2; }
+    /* Product card grid */
+    .cursos-product-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:860px; margin:52px auto 0; }
+    @media(max-width:640px) { .cursos-product-grid { grid-template-columns:1fr; } }
 
-    .curso-card-body { padding:26px 28px; display:grid; grid-template-columns:1fr 280px; gap:32px; align-items:start; }
-    @media(max-width:768px) { .curso-card-body { grid-template-columns:1fr; gap:24px; padding:22px 18px; } .curso-card-img { height:130px; } }
+    .cpcard { background:#0d0d0d; border:1px solid rgba(198,190,181,0.12); border-radius:6px; overflow:hidden; transition:border-color 0.22s, box-shadow 0.22s; }
+    .cpcard:hover { border-color:rgba(198,190,181,0.28); box-shadow:0 16px 48px rgba(0,0,0,0.45); }
+    .cpcard.open { border-color:rgba(198,190,181,0.30); }
 
-    .curso-desc p { color:rgba(255,255,255,0.60); font-size:0.97rem; margin-bottom:20px; line-height:1.75; }
-    .curso-modules h4 { font-family:'Lato',sans-serif; font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--taupe); margin-bottom:14px; }
-    .curso-modules ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
-    .curso-modules ul li { display:flex; align-items:baseline; gap:10px; color:rgba(255,255,255,0.65); font-size:0.88rem; }
-    .curso-modules ul li::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--taupe); flex-shrink:0; position:relative; top:-2px; }
+    .cpcard-img { position:relative; height:200px; overflow:hidden; }
+    .cpcard-img img { width:100%; height:100%; object-fit:cover; object-position:center top; transition:transform 0.5s; }
+    .cpcard:hover .cpcard-img img { transform:scale(1.04); }
+    .cpcard-img-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.20) 70%,transparent 100%); }
+    .cpcard-img-placeholder { height:200px; background:#080808; display:flex; align-items:center; justify-content:center; border-bottom:1px dashed rgba(198,190,181,0.15); }
 
-    .curso-sidebar { background:rgba(255,255,255,0.03); border:1px solid rgba(198,190,181,0.12); border-radius:4px; padding:22px 20px; position:sticky; top:136px; }
-    .curso-sidebar-price { text-align:center; padding-bottom:16px; border-bottom:1px solid rgba(198,190,181,0.10); margin-bottom:16px; }
-    .curso-sidebar-price .price-label { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.40); margin-bottom:4px; }
-    .curso-sidebar-price .price-value { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:700; color:var(--taupe); line-height:1; }
-    .curso-sidebar-price .price-cents { font-size:1.4rem; font-weight:600; }
-    .curso-sidebar-price .price-from { font-size:11px; color:rgba(255,255,255,0.35); margin-top:4px; }
-    .curso-sidebar .btn-comprar { display:block; text-align:center; background:var(--taupe); color:#000; font-family:'Lato',sans-serif; font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; padding:16px 24px; border-radius:3px; transition:background 0.25s; margin-bottom:10px; }
-    .curso-sidebar .btn-comprar:hover { background:var(--taupe-light); }
-    .curso-sidebar .btn-duvida { display:block; text-align:center; border:1px solid rgba(198,190,181,0.25); color:rgba(255,255,255,0.60); font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:12px 24px; border-radius:3px; transition:all 0.25s; margin-bottom:24px; }
-    .curso-sidebar .btn-duvida:hover { border-color:var(--taupe); color:var(--taupe); }
-    .curso-sidebar-includes h4 { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--taupe); margin-bottom:14px; }
-    .curso-sidebar-includes ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
-    .curso-sidebar-includes ul li { display:flex; align-items:center; gap:10px; font-size:0.82rem; color:rgba(255,255,255,0.65); }
-    .curso-sidebar-includes ul li::before { content:'✓'; color:var(--taupe); font-weight:700; flex-shrink:0; }
+    .cpcard-info { padding:22px 22px 18px; }
+    .cpcard-badge { display:inline-block; font-size:8px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--taupe); border:1px solid rgba(198,190,181,0.25); padding:3px 10px; border-radius:20px; margin-bottom:10px; }
+    .cpcard-title { font-family:'Playfair Display',serif; font-size:1.15rem; color:#fff; line-height:1.25; margin-bottom:6px; }
+    .cpcard-tagline { font-size:0.83rem; color:rgba(255,255,255,0.45); margin-bottom:14px; }
+    .cpcard-price { font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--taupe); line-height:1; margin-bottom:16px; }
+    .cpcard-price span { font-size:1rem; }
+
+    .cpcard-toggle { width:100%; background:none; border:1px solid rgba(198,190,181,0.20); color:rgba(255,255,255,0.65); font-family:'Lato',sans-serif; font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:11px 16px; cursor:pointer; transition:all 0.22s; display:flex; align-items:center; justify-content:space-between; border-radius:3px; }
+    .cpcard-toggle:hover, .cpcard.open .cpcard-toggle { border-color:var(--taupe); color:var(--taupe); background:rgba(198,190,181,0.06); }
+    .cpcard-toggle .arrow { font-size:14px; transition:transform 0.3s; }
+    .cpcard.open .cpcard-toggle .arrow { transform:rotate(180deg); }
+
+    .cpcard-expand { display:none; border-top:1px solid rgba(198,190,181,0.08); padding:28px 22px; }
+    .cpcard.open .cpcard-expand { display:block; }
+
+    .cpcard-desc p { color:rgba(255,255,255,0.60); font-size:0.92rem; line-height:1.75; margin-bottom:16px; }
+    .cpcard-modules { margin-bottom:24px; }
+    .cpcard-modules h4 { font-size:8px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--taupe); margin-bottom:12px; }
+    .cpcard-modules ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+    .cpcard-modules ul li { display:flex; align-items:baseline; gap:9px; color:rgba(255,255,255,0.60); font-size:0.84rem; }
+    .cpcard-modules ul li::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--taupe); flex-shrink:0; position:relative; top:-2px; }
+    .cpcard-includes { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+    .cpcard-includes span { font-size:10px; color:rgba(255,255,255,0.55); background:rgba(198,190,181,0.06); border:1px solid rgba(198,190,181,0.12); padding:4px 10px; border-radius:20px; }
+    .cpcard-includes span::before { content:'✓ '; color:var(--taupe); font-weight:700; }
+    .cpcard-buy { display:block; text-align:center; background:var(--taupe); color:#000; font-family:'Lato',sans-serif; font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; padding:15px; border-radius:3px; transition:background 0.22s; margin-bottom:10px; }
+    .cpcard-buy:hover { background:var(--taupe-light); }
+    .cpcard-ask { display:block; text-align:center; border:1px solid rgba(198,190,181,0.22); color:rgba(255,255,255,0.55); font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:11px; border-radius:3px; transition:all 0.22s; }
+    .cpcard-ask:hover { border-color:var(--taupe); color:var(--taupe); }
 
     .sales-divider { border:none; border-top:1px solid rgba(198,190,181,0.08); margin:0 auto; max-width:1180px; }
 
@@ -167,122 +178,109 @@
     </div>
   </section>
 
-  <!-- CURSO 1 – DESIGNER DE SOBRANCELHAS -->
-  <section class="section" id="designer" style="padding-top:60px;">
+  <!-- CURSOS PRODUCT CARDS -->
+  <section class="section" id="cursos" style="padding-top:60px;">
     <div class="container">
-      <div class="curso-card fade-in">
-        <div class="curso-card-img">
-          <img src="resultado-henna.jpg" alt="Designer de Sobrancelhas com Henna" />
-          <div class="curso-card-img-overlay"></div>
-          <div class="curso-card-img-label">
-            <span class="badge">Curso 01 · Para Iniciantes</span>
-            <h2>Designer de Sobrancelhas<br><em>com Henna</em></h2>
+      <div class="section-header-c fade-in">
+        <span class="section-tag">Escolha seu curso</span>
+        <h2 class="section-title">Cursos <em>Online</em></h2>
+        <p class="section-desc" style="margin:0 auto;text-align:center;">Clique em um curso para ver todos os detalhes e conteúdos</p>
+      </div>
+
+      <div class="cursos-product-grid">
+
+        <!-- Card 1: Designer de Sobrancelhas com Henna -->
+        <div class="cpcard fade-in" id="designer">
+          <div class="cpcard-img">
+            <img src="resultado-henna.jpg" alt="Designer de Sobrancelhas com Henna" />
+            <div class="cpcard-img-overlay"></div>
           </div>
-        </div>
-        <div class="curso-card-body">
-          <div>
-            <div class="curso-desc">
+          <div class="cpcard-info">
+            <span class="cpcard-badge">Curso 01 · Para Iniciantes</span>
+            <h3 class="cpcard-title">Designer de Sobrancelhas<br><em>com Henna</em></h3>
+            <p class="cpcard-tagline">Do zero ao profissional com certificado incluso</p>
+            <p class="cpcard-price">R$29<span>,90</span></p>
+            <button class="cpcard-toggle" onclick="toggleCpcard(this.closest('.cpcard'))">
+              Ver detalhes do curso <span class="arrow">&#8964;</span>
+            </button>
+          </div>
+          <div class="cpcard-expand">
+            <div class="cpcard-desc">
               <p>O ponto de partida perfeito para quem quer entrar no mercado de beleza. Você aprende do zero — desde o mapeamento facial até a técnica completa de henna — e sai pronta para atender clientes com confiança e profissionalismo.</p>
               <p>Com didática clara, aulas práticas e suporte exclusivo da Victoria, você vai dominar o design e a coloração de sobrancelhas em pouco tempo.</p>
             </div>
-            <div class="curso-modules">
+            <div class="cpcard-modules">
               <h4>Conteúdo do Curso</h4>
               <ul>
                 <li>Introdução ao design: história e mercado de beleza</li>
                 <li>Anatomia do rosto e mapeamento facial</li>
                 <li>Técnicas de medição e proporção</li>
                 <li>Ferramentas, produtos e materiais essenciais</li>
-                <li>Desenho e esboço da sobrancelha ideal</li>
                 <li>Técnicas de aplicação: cera, linha e pinça</li>
                 <li>Coloração e henna: protocolo completo passo a passo</li>
                 <li>Como montar sua agenda e precificar seus serviços</li>
                 <li>Boas práticas de higiene e biossegurança</li>
               </ul>
             </div>
-          </div>
-          <div class="curso-sidebar">
-            <div class="curso-sidebar-price">
-              <div class="price-label">Valor do curso</div>
-              <div class="price-value">R$<span style="font-size:3rem;font-family:'Playfair Display',serif;color:var(--taupe);font-weight:700;">29</span><span class="price-cents">,90</span></div>
-              <div class="price-from">Acesso imediato · Vitalício</div>
+            <div class="cpcard-includes">
+              <span>Aulas em vídeo</span>
+              <span>Material em PDF</span>
+              <span>Acesso vitalício</span>
+              <span>Suporte exclusivo</span>
+              <span>Certificado</span>
+              <span>Kit VG personalizado</span>
             </div>
-            <a href="https://chk.eduzz.com/E9OODY8Q9B" target="_blank" rel="noopener" class="btn-comprar">Comprar Agora</a>
-            <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20tenho%20interesse%20no%20curso%20Designer%20de%20Sobrancelhas%20com%20Henna%20(R%2429%2C90)%20e%20gostaria%20de%20mais%20informacoes" target="_blank" rel="noopener" class="btn-duvida">Tirar Dúvidas</a>
-            <div class="curso-sidebar-includes">
-              <h4>O que está incluso</h4>
-              <ul>
-                <li>Aulas em vídeo de alta qualidade</li>
-                <li>Material de apoio em PDF</li>
-                <li>Acesso vitalício ao conteúdo</li>
-                <li>Suporte via grupo exclusivo</li>
-                <li>Certificado de conclusão</li>
-                <li>Atualizações gratuitas</li>
-                <li>Kit VG exclusivo personalizado</li>
-              </ul>
-            </div>
+            <a href="https://chk.eduzz.com/E9OODY8Q9B" target="_blank" rel="noopener" class="cpcard-buy">Comprar Agora — R$29,90</a>
+            <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20tenho%20interesse%20no%20curso%20Designer%20de%20Sobrancelhas%20com%20Henna%20(R%2429%2C90)%20e%20gostaria%20de%20mais%20informacoes" target="_blank" rel="noopener" class="cpcard-ask">Tirar Dúvidas no WhatsApp</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <hr class="sales-divider" />
-
-  <!-- CURSO 2 – BROW LAMINATION -->
-  <section class="section" id="browlamination" style="padding-top:60px;">
-    <div class="container">
-      <div class="curso-card fade-in">
-        <div class="curso-card-img">
-          <img src="cliente-05.jpg" alt="Brow Lamination 2026 – Resultado Victoria Guimarães" style="object-position:center top;" />
-          <div class="curso-card-img-overlay"></div>
-          <div class="curso-card-img-label">
-            <span class="badge" style="background:rgba(198,190,181,0.20);color:var(--taupe);">Curso 02 · Técnica Avançada</span>
-            <h2>Brow Lamination<br><em>2026</em></h2>
+        <!-- Card 2: Brow Lamination -->
+        <div class="cpcard fade-in" id="browlamination">
+          <div class="cpcard-img">
+            <img src="cliente-05.jpg" alt="Brow Lamination 2026" style="object-position:center top;" />
+            <div class="cpcard-img-overlay"></div>
           </div>
-        </div>
-        <div class="curso-card-body">
-          <div>
-            <div class="curso-desc">
+          <div class="cpcard-info">
+            <span class="cpcard-badge">Curso 02 · Técnica Avançada</span>
+            <h3 class="cpcard-title">Brow Lamination<br><em>2026</em></h3>
+            <p class="cpcard-tagline">Protocolo completo da técnica mais requisitada</p>
+            <p class="cpcard-price">R$19<span>,90</span></p>
+            <button class="cpcard-toggle" onclick="toggleCpcard(this.closest('.cpcard'))">
+              Ver detalhes do curso <span class="arrow">&#8964;</span>
+            </button>
+          </div>
+          <div class="cpcard-expand">
+            <div class="cpcard-desc">
               <p>A técnica que está dominando o mercado da beleza. Brow Lamination transforma sobrancelhas finas, desalinhadas ou sem volume em sobrancelhas impecáveis — estruturadas, alinhadas e com aspecto natural e moderno.</p>
               <p>Aprenda o protocolo completo com Victoria, desde a anamnese até o acabamento final, e ofereça um serviço de alto valor agregado para suas clientes.</p>
             </div>
-            <div class="curso-modules">
+            <div class="cpcard-modules">
               <h4>Conteúdo do Curso</h4>
               <ul>
                 <li>O que é Brow Lamination e por que o mercado ama</li>
                 <li>Anamnese, contraindicações e cuidados prévios</li>
-                <li>Produtos utilizados e como escolher os melhores</li>
+                <li>Produtos e como escolher os melhores</li>
                 <li>Protocolo completo de laminação passo a passo</li>
                 <li>Técnicas de fixação e modelagem dos fios</li>
                 <li>Coloração e design integrado com a laminação</li>
                 <li>Cuidados pós-procedimento e orientação a clientes</li>
-                <li>Como fotografar resultados e divulgar nas redes</li>
                 <li>Como precificar e escalar o seu negócio</li>
               </ul>
             </div>
-          </div>
-          <div class="curso-sidebar">
-            <div class="curso-sidebar-price">
-              <div class="price-label">Valor do curso</div>
-              <div class="price-value">R$<span style="font-size:3rem;font-family:'Playfair Display',serif;color:var(--taupe);font-weight:700;">19</span><span class="price-cents">,90</span></div>
-              <div class="price-from">Acesso imediato · Vitalício</div>
+            <div class="cpcard-includes">
+              <span>Aulas em vídeo</span>
+              <span>Protocolo completo</span>
+              <span>Acesso vitalício</span>
+              <span>Suporte exclusivo</span>
+              <span>Certificado</span>
+              <span>Kit VG personalizado</span>
             </div>
-            <a href="https://chk.eduzz.com/39YN468JWO" target="_blank" rel="noopener" class="btn-comprar">Comprar Agora</a>
-            <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20tenho%20interesse%20no%20curso%20Brow%20Lamination%202026%20(R%2419%2C90)%20e%20gostaria%20de%20mais%20informacoes" target="_blank" rel="noopener" class="btn-duvida">Tirar Dúvidas</a>
-            <div class="curso-sidebar-includes">
-              <h4>O que está incluso</h4>
-              <ul>
-                <li>Aulas em vídeo de alta qualidade</li>
-                <li>Protocolo completo passo a passo</li>
-                <li>Acesso vitalício ao conteúdo</li>
-                <li>Suporte via grupo exclusivo</li>
-                <li>Certificado de conclusão</li>
-                <li>Atualizações gratuitas</li>
-                <li>Kit VG exclusivo personalizado</li>
-              </ul>
-            </div>
+            <a href="https://chk.eduzz.com/39YN468JWO" target="_blank" rel="noopener" class="cpcard-buy">Comprar Agora — R$19,90</a>
+            <a href="https://wa.me/5541996466824?text=Ola%20Victoria%2C%20tenho%20interesse%20no%20curso%20Brow%20Lamination%202026%20(R%2419%2C90)%20e%20gostaria%20de%20mais%20informacoes" target="_blank" rel="noopener" class="cpcard-ask">Tirar Dúvidas no WhatsApp</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>

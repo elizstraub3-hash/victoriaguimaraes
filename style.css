@@ -311,16 +311,15 @@ ul { list-style: none; }
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 1000;
-  background: rgba(22,18,18,0.97);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(198,190,181,0.12);
+  background: #000000;
+  border-bottom: 1px solid rgba(198,190,181,0.10);
   transition: background 0.3s;
 }
 .nav-container {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 28px;
-  height: 88px;
+  height: 120px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
@@ -365,7 +364,7 @@ ul { list-style: none; }
   justify-content: center;
   justify-self: center;
 }
-.logo-img { height: 64px; width: auto; max-width: 160px; display: block; border-radius: 3px; }
+.logo-img { height: 96px; width: auto; max-width: 200px; display: block; border-radius: 3px; }
 
 .hamburger {
   display: none;
@@ -389,7 +388,7 @@ ul { list-style: none; }
 .nav-mobile {
   display: none;
   position: absolute;
-  top: 88px;
+  top: 120px;
   left: 0; right: 0;
   background: rgba(22,18,18,0.99);
   flex-direction: column;
@@ -443,7 +442,7 @@ ul { list-style: none; }
 .hero-inner {
   position: relative;
   z-index: 2;
-  padding-top: 88px;
+  padding-top: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -759,7 +758,7 @@ ul { list-style: none; }
   border: 1px solid rgba(198,190,181,0.15);
   text-align: center;
   position: sticky;
-  top: 108px;
+  top: 136px;
 }
 .cta-card h3 {
   font-size: 1.6rem;
@@ -867,7 +866,7 @@ ul { list-style: none; }
    ======================== */
 .page-hero {
   background: var(--dark-mid);
-  padding: 160px 0 80px;
+  padding: 190px 0 80px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -902,7 +901,7 @@ ul { list-style: none; }
   border: 1px solid rgba(198,190,181,0.12);
   text-align: center;
   position: sticky;
-  top: 108px;
+  top: 136px;
 }
 .course-visual-box h3 { font-size: 1.15rem; color: var(--white); margin-bottom: 12px; }
 .course-visual-box p { color: var(--text-muted-dark); font-size: 0.88rem; }
@@ -1083,7 +1082,7 @@ ul { list-style: none; }
   border: 1px solid rgba(198,190,181,0.14);
   text-align: center;
   position: sticky;
-  top: 108px;
+  top: 136px;
 }
 .schedule-box h3 { font-size: 1.65rem; color: var(--white); margin-bottom: 10px; }
 .schedule-box p { color: var(--text-muted-dark); margin-bottom: 28px; font-size: 0.93rem; }

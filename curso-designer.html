@@ -15,7 +15,9 @@
     .course-hero-bg { position:absolute; inset:0; }
     .course-hero-bg img { width:100%; height:100%; object-fit:cover; object-position:center top; }
     .course-hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(0,0,0,0.20) 0%,rgba(0,0,0,0.65) 50%,rgba(0,0,0,0.96) 100%); }
-    .course-hero-content { position:relative; z-index:2; width:100%; padding:0 20px 80px; text-align:center; }
+    .course-hero-content { position:relative; z-index:2; width:100%; padding:0 64px 80px; text-align:center; }
+    @media(max-width:600px){ .course-hero-content { padding:0 36px 64px; } }
+    @media(max-width:400px){ .course-hero-content { padding:0 24px 52px; } }
     .course-hero-tag { display:inline-block; border:1px solid rgba(198,190,181,0.40); color:var(--taupe); font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; padding:7px 20px; border-radius:20px; margin-bottom:24px; }
     .course-hero-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,5.5vw,3.8rem); color:#fff; line-height:1.15; margin-bottom:14px; max-width:800px; margin-left:auto; margin-right:auto; }
     .course-hero-title em { color:var(--taupe); font-style:italic; }
@@ -57,9 +59,10 @@
 
     /* Price CTA block */
     .course-cta-block { background:#0d0d0d; border:1px solid rgba(198,190,181,0.14); border-radius:6px; text-align:center; padding:52px 36px; margin:56px auto 0; max-width:500px; }
-    .course-cta-block .price-big { font-family:'Playfair Display',serif; font-size:3.4rem; color:var(--taupe); line-height:1; margin-bottom:8px; }
+    .course-cta-block p { text-align:center !important; background:none !important; border:none !important; box-shadow:none !important; padding:0 !important; width:auto !important; }
+    .course-cta-block .price-big { font-family:'Playfair Display',serif; font-size:3.4rem; color:var(--taupe); line-height:1; margin-bottom:8px !important; }
     .course-cta-block .price-big span { font-size:1.6rem; }
-    .course-cta-block .price-note { color:rgba(255,255,255,0.40); font-size:0.82rem; margin-bottom:28px; }
+    .course-cta-block .price-note { color:rgba(255,255,255,0.40); font-size:0.82rem; margin-bottom:28px !important; }
     .btn-buy-big { display:block; background:var(--taupe); color:#000; font-family:'Lato',sans-serif; font-size:12px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; padding:18px; border-radius:3px; transition:background 0.22s; margin-bottom:12px; }
     .btn-buy-big:hover { background:var(--taupe-light); }
     .btn-ask-big { display:block; border:1px solid rgba(198,190,181,0.22); color:rgba(255,255,255,0.55); font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:13px; border-radius:3px; transition:all 0.22s; }

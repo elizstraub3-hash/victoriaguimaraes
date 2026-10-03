@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Casamento Lidiane &amp; Celio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Great+Vibes&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a96e;
+      --gold-light: #e8d5b0;
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --surface2: #1f1f1f;
+      --border: rgba(201,169,110,0.18);
+      --text: #f0ece6;
+      --muted: rgba(240,236,230,0.45);
+      --green: #4caf76;
+      --red: #e06060;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── LOGIN ── */
+    #loginScreen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+      background: radial-gradient(ellipse at center, #1a1208 0%, var(--bg) 70%);
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 380px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2.8rem 2.2rem;
+      background: var(--surface);
+      text-align: center;
+    }
+
+    .login-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+    }
+
+    .login-sub {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.2rem;
+    }
+
+    .login-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      text-align: left;
+      margin-bottom: 1.2rem;
+    }
+
+    .login-field label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .login-field input {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--text);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.25s;
+      width: 100%;
+    }
+
+    .login-field input:focus { border-color: var(--gold); }
+
+    .login-error {
+      color: var(--red);
+      font-size: 0.82rem;
+      margin-bottom: 0.8rem;
+      min-height: 1.1rem;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #0a0a0a;
+      border: none;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.85rem 2rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      width: 100%;
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+
+    /* ── DASHBOARD ── */
+    #dashboard { display: none; }
+
+    /* header */
+    .dash-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .dash-brand {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6rem;
+      color: var(--gold);
+    }
+
+    .dash-brand span {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-top: -4px;
+    }
+
+    .header-actions { display: flex; gap: 0.6rem; align-items: center; }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 1rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    .btn-icon {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      width: 34px; height: 34px;
+      border-radius: 3px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+      font-size: 1rem;
+    }
+
+    .btn-icon:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* main */
+    .dash-main {
+      padding: 1.8rem 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    /* stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.3rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .stat-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    .stat-card.green .stat-value { color: var(--green); }
+    .stat-card.red .stat-value   { color: var(--red); }
+
+    /* toolbar */
+    .toolbar {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 200px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--text);
+      font-size: 0.9rem;
+      padding: 0.6rem 1rem 0.6rem 2.4rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-box input:focus { border-color: var(--gold); }
+    .search-box input::placeholder { color: var(--muted); }
+
+    .search-box .icon {
+      position: absolute;
+      left: 0.75rem; top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .filter-select {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--text);
+      font-size: 0.85rem;
+      padding: 0.6rem 1rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .filter-select option { background: #1a1a1a; }
+
+    /* table */
+    .table-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 580px;
+    }
+
+    thead tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      padding: 0.85rem 1rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: left;
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    th:hover { color: var(--gold-light); }
+
+    td {
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: top;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+
+    tbody tr:hover td { background: rgba(201,169,110,0.04); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .badge-green { background: rgba(76,175,118,0.15); color: var(--green); }
+    .badge-red   { background: rgba(224,96,96,0.15);  color: var(--red); }
+
+    .msg-cell {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 240px;
+    }
+
+    .empty-state {
+      padding: 4rem 2rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .empty-state p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; }
+
+    .row-count {
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      text-align: right;
+    }
+
+    /* delete btn */
+    .btn-del {
+      background: transparent;
+      border: none;
+      color: rgba(224,96,96,0.4);
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .btn-del:hover { color: var(--red); }
+
+    /* modal */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem;
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .modal h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    .modal-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-field label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .modal-field input {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--text);
+      font-size: 0.9rem;
+      padding: 0.7rem 0.9rem;
+      outline: none;
+      width: 100%;
+    }
+
+    .modal-field input:focus { border-color: var(--gold); }
+    .modal-field small { color: var(--muted); font-size: 0.75rem; line-height: 1.5; }
+
+    .modal-actions { display: flex; gap: 0.8rem; margin-top: 1.5rem; }
+
+    .btn-secondary {
+      flex: 1;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 0.7rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    .modal-actions .btn-primary { flex: 1; padding: 0.7rem; }
+
+    /* toast */
+    .toast {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      background: var(--surface2);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      padding: 0.8rem 1.2rem;
+      font-size: 0.85rem;
+      color: var(--gold);
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.3s;
+      pointer-events: none;
+    }
+
+    .toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ═══ LOGIN ═══ -->
+<div id="loginScreen">
+  <div class="login-card">
+    <p class="login-title">Painel Admin</p>
+    <p class="login-sub">Casamento Lidiane &amp; Celio</p>
+
+    <div class="login-field">
+      <label for="loginPass">Senha</label>
+      <input type="password" id="loginPass" placeholder="••••••••"
+             onkeydown="if(event.key==='Enter')doLogin()" />
+    </div>
+
+    <p class="login-error" id="loginErr"></p>
+    <button class="btn-primary" onclick="doLogin()">Entrar</button>
+  </div>
+</div>
+
+<!-- ═══ DASHBOARD ═══ -->
+<div id="dashboard">
+  <header class="dash-header">
+    <div class="dash-brand">
+      Lidiane &amp; Celio
+      <span>Painel Administrativo</span>
+    </div>
+    <div class="header-actions">
+      <button class="btn-ghost" onclick="exportCSV()">⬇ Exportar CSV</button>
+      <button class="btn-icon" title="Configurações" onclick="openSettings()">⚙</button>
+      <button class="btn-ghost" onclick="doLogout()">Sair</button>
+    </div>
+  </header>
+
+  <main class="dash-main">
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Total respostas</span>
+        <span class="stat-value" id="statTotal">0</span>
+        <span class="stat-sub">confirmações recebidas</span>
+      </div>
+      <div class="stat-card green">
+        <span class="stat-label">Confirmados</span>
+        <span class="stat-value" id="statYes">0</span>
+        <span class="stat-sub">vão comparecer</span>
+      </div>
+      <div class="stat-card red">
+        <span class="stat-label">Recusaram</span>
+        <span class="stat-value" id="statNo">0</span>
+        <span class="stat-sub">não poderão ir</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Total pessoas</span>
+        <span class="stat-value" id="statPeople">0</span>
+        <span class="stat-sub">presentes esperados</span>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="search-box">
+        <span class="icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Buscar por nome ou WhatsApp…"
+               oninput="renderTable()" />
+      </div>
+      <select class="filter-select" id="filterStatus" onchange="renderTable()">
+        <option value="all">Todos</option>
+        <option value="sim">Confirmados</option>
+        <option value="nao">Recusaram</option>
+      </select>
+      <button class="btn-icon" title="Atualizar" onclick="loadData()">↻</button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th onclick="sortBy('nome')">Nome ↕</th>
+            <th onclick="sortBy('whatsapp')">WhatsApp ↕</th>
+            <th onclick="sortBy('pessoas')">Pessoas ↕</th>
+            <th onclick="sortBy('confirmado')">Situação ↕</th>
+            <th onclick="sortBy('data')">Data ↕</th>
+            <th>Mensagem</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <div id="emptyState" class="empty-state" style="display:none;">
+        <p>Nenhuma confirmação ainda. Compartilhe o convite! 💌</p>
+      </div>
+      <div class="row-count" id="rowCount"></div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══ SETTINGS MODAL ═══ -->
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal">
+    <h3>⚙ Configurações</h3>
+
+    <div class="modal-field">
+      <label>Senha do painel</label>
+      <input type="password" id="newPass" placeholder="Nova senha (deixe em branco para não alterar)" />
+    </div>
+
+    <div class="modal-field">
+      <label>Google Apps Script URL</label>
+      <input type="url" id="scriptUrl" placeholder="https://script.google.com/macros/s/…/exec" />
+      <small>
+        Para sincronizar entre dispositivos, crie um Apps Script no Google Sheets e cole o URL aqui.<br/>
+        <a href="#" onclick="showScriptHelp(); return false;" style="color:var(--gold);">Ver instruções</a>
+      </small>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="closeSettings()">Cancelar</button>
+      <button class="btn-primary" onclick="saveSettings()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SCRIPT HELP MODAL ═══ -->
+<div class="modal-overlay" id="helpModal">
+  <div class="modal" style="max-width:520px;">
+    <h3>📊 Conectar ao Google Sheets</h3>
+    <div style="font-size:0.83rem;line-height:1.9;color:var(--muted);margin-bottom:1rem;">
+      <b style="color:var(--text);">1.</b> Acesse <b style="color:var(--gold);">sheets.google.com</b> e crie uma planilha nova.<br/>
+      <b style="color:var(--text);">2.</b> Clique em <b>Extensões → Apps Script</b>.<br/>
+      <b style="color:var(--text);">3.</b> Apague o código e cole o script abaixo.<br/>
+      <b style="color:var(--text);">4.</b> Clique em <b>Implantar → Nova implantação → App da Web</b>.<br/>
+      <b style="color:var(--text);">5.</b> Em "Executar como" selecione <b>Eu</b>. Em "Quem tem acesso" selecione <b>Qualquer pessoa</b>.<br/>
+      <b style="color:var(--text);">6.</b> Copie o URL gerado e cole nas Configurações acima.
+    </div>
+    <pre style="background:#0a0a0a;border:1px solid var(--border);border-radius:4px;padding:1rem;font-size:0.72rem;overflow-x:auto;color:#aef;line-height:1.6;">function doPost(e) {
+  var sheet = SpreadsheetApp
+    .getActiveSpreadsheet()
+    .getSheets()[0];
+  if (sheet.getLastRow() === 0)
+    sheet.appendRow(['ID','Nome','WhatsApp',
+      'Pessoas','Confirmado','Mensagem','Data']);
+  var d = JSON.parse(e.postData.contents);
+  sheet.appendRow([d.id,d.nome,d.whatsapp,
+    d.pessoas,d.confirmado,d.mensagem,d.data]);
+  return ContentService
+    .createTextOutput('ok')
+    .setMimeType(ContentService.MimeType.TEXT);
+}
+
+function doGet() {
+  var sheet = SpreadsheetApp
+    .getActiveSpreadsheet()
+    .getSheets()[0];
+  var rows = sheet.getDataRange().getValues();
+  var keys = rows.shift();
+  var data = rows.map(function(r){
+    var o={};
+    keys.forEach(function(k,i){o[k.toLowerCase()]=r[i];});
+    return o;
+  });
+  return ContentService
+    .createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON);
+}</pre>
+    <div class="modal-actions">
+      <button class="btn-primary" onclick="document.getElementById('helpModal').classList.remove('open')">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+  /* ── CONFIG & AUTH ── */
+  var DEFAULT_PASS = 'casamento2025';
+  var STORAGE_KEY  = 'wedding_rsvps';
+
+  function getPass()      { return localStorage.getItem('admin_pass') || DEFAULT_PASS; }
+  function getScriptUrl() { return localStorage.getItem('admin_script_url') || null; }
+
+  function doLogin() {
+    var pass = document.getElementById('loginPass').value;
+    if (pass === getPass()) {
+      sessionStorage.setItem('admin_auth', '1');
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      loadData();
+    } else {
+      document.getElementById('loginErr').textContent = 'Senha incorreta.';
+      document.getElementById('loginPass').value = '';
+    }
+  }
+
+  function doLogout() {
+    sessionStorage.removeItem('admin_auth');
+    location.reload();
+  }
+
+  // Auto-login if session active
+  if (sessionStorage.getItem('admin_auth') === '1') {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+  }
+
+  /* ── DATA ── */
+  var allRsvps = [];
+  var sortKey  = 'data';
+  var sortDir  = -1;
+
+  function loadData() {
+    var url = getScriptUrl();
+    if (url) {
+      fetch(url + '?v=' + Date.now())
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+          allRsvps = data;
+          renderAll();
+          showToast('Dados sincronizados com Google Sheets ✓');
+        })
+        .catch(function(){
+          // fallback to localStorage
+          allRsvps = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+          renderAll();
+          showToast('Usando dados locais (falha na conexão)');
+        });
+    } else {
+      allRsvps = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      renderAll();
+    }
+  }
+
+  function renderAll() {
+    updateStats();
+    renderTable();
+  }
+
+  /* ── STATS ── */
+  function updateStats() {
+    var confirmed = allRsvps.filter(function(r){ return r.confirmado === 'sim'; });
+    var declined  = allRsvps.filter(function(r){ return r.confirmado === 'nao'; });
+    var totalPeople = confirmed.reduce(function(acc, r){
+      return acc + (parseInt(r.pessoas) || (r.pessoas === '5+' ? 5 : 1));
+    }, 0);
+
+    document.getElementById('statTotal').textContent  = allRsvps.length;
+    document.getElementById('statYes').textContent    = confirmed.length;
+    document.getElementById('statNo').textContent     = declined.length;
+    document.getElementById('statPeople').textContent = totalPeople;
+  }
+
+  /* ── TABLE ── */
+  function sortBy(key) {
+    if (sortKey === key) sortDir *= -1;
+    else { sortKey = key; sortDir = 1; }
+    renderTable();
+  }
+
+  function renderTable() {
+    var q      = (document.getElementById('searchInput').value || '').toLowerCase();
+    var filter = document.getElementById('filterStatus').value;
+
+    var rows = allRsvps.filter(function(r){
+      var matchQ = !q
+        || (r.nome || '').toLowerCase().includes(q)
+        || (r.whatsapp || '').toLowerCase().includes(q);
+      var matchF = filter === 'all' || r.confirmado === filter;
+      return matchQ && matchF;
+    });
+
+    rows.sort(function(a, b){
+      var va = (a[sortKey] || '').toString().toLowerCase();
+      var vb = (b[sortKey] || '').toString().toLowerCase();
+      return va < vb ? -sortDir : va > vb ? sortDir : 0;
+    });
+
+    var tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+
+    if (rows.length === 0) {
+      document.getElementById('emptyState').style.display = 'block';
+      document.getElementById('rowCount').textContent = '';
+      return;
+    }
+
+    document.getElementById('emptyState').style.display = 'none';
+    document.getElementById('rowCount').textContent = rows.length + ' registro(s)';
+
+    rows.forEach(function(r){
+      var tr = document.createElement('tr');
+      var badge = r.confirmado === 'sim'
+        ? '<span class="badge badge-green">✓ Confirmado</span>'
+        : '<span class="badge badge-red">✗ Recusou</span>';
+
+      tr.innerHTML = '<td><strong>' + esc(r.nome || '—') + '</strong></td>'
+        + '<td>' + esc(r.whatsapp || '—') + '</td>'
+        + '<td style="text-align:center;">' + esc(r.pessoas || '—') + '</td>'
+        + '<td>' + badge + '</td>'
+        + '<td style="font-size:0.8rem;color:var(--muted);">' + esc(r.data || '—') + '</td>'
+        + '<td class="msg-cell">' + esc(r.mensagem || '') + '</td>'
+        + '<td><button class="btn-del" title="Remover" onclick="deleteRsvp(\'' + esc(r.id) + '\')">✕</button></td>';
+      tbody.appendChild(tr);
+    });
+  }
+
+  function deleteRsvp(id) {
+    if (!confirm('Remover esta confirmação?')) return;
+    allRsvps = allRsvps.filter(function(r){ return r.id !== id; });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(allRsvps));
+    renderAll();
+    showToast('Registro removido');
+  }
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;');
+  }
+
+  /* ── EXPORT CSV ── */
+  function exportCSV() {
+    if (allRsvps.length === 0) { showToast('Nenhum dado para exportar'); return; }
+    var header = ['ID','Nome','WhatsApp','Pessoas','Confirmado','Mensagem','Data'];
+    var lines  = [header.join(';')];
+    allRsvps.forEach(function(r){
+      lines.push([r.id,r.nome,r.whatsapp,r.pessoas,r.confirmado,r.mensagem,r.data]
+        .map(function(v){ return '"' + String(v||'').replace(/"/g,'""') + '"'; })
+        .join(';'));
+    });
+    var blob = new Blob(['﻿' + lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
+    var url  = URL.createObjectURL(blob);
+    var a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'confirmacoes-casamento.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('CSV exportado!');
+  }
+
+  /* ── SETTINGS ── */
+  function openSettings() {
+    document.getElementById('scriptUrl').value = getScriptUrl() || '';
+    document.getElementById('newPass').value   = '';
+    document.getElementById('settingsModal').classList.add('open');
+  }
+
+  function closeSettings() {
+    document.getElementById('settingsModal').classList.remove('open');
+  }
+
+  function saveSettings() {
+    var newPass = document.getElementById('newPass').value.trim();
+    var url     = document.getElementById('scriptUrl').value.trim();
+
+    if (newPass) localStorage.setItem('admin_pass', newPass);
+    if (url)     localStorage.setItem('admin_script_url', url);
+    else         localStorage.removeItem('admin_script_url');
+
+    closeSettings();
+    showToast('Configurações salvas ✓');
+    loadData();
+  }
+
+  function showScriptHelp() {
+    document.getElementById('helpModal').classList.add('open');
+  }
+
+  /* ── TOAST ── */
+  var toastTimer;
+  function showToast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 3000);
+  }
+
+  // Init if already authenticated
+  if (sessionStorage.getItem('admin_auth') === '1') loadData();
+</script>
+</body>
+</html>
